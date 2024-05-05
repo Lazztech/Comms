@@ -56,7 +56,27 @@ flowchart BT;
 
 ## Networking
 
-https://www.reddit.com/r/HomeNetworking/comments/hxal50/multiple_access_points_with_the_same_ssid/
+- wifi roaming
+- connect to AP via nfc
+- connect to AP via qr code
+
+```mermaid
+---
+title: Comms Nodes Networking
+---
+flowchart BT;
+    commsNode1[Node 1 - Network Name SSID: CommsNode];
+    commsNode2[Node 2 - Network Name SSID: CommsNode];
+    commsNode3[Node ... - Network Name SSID: CommsNode];
+    node1user1[Smartphone User - WiFi Roaming];
+    node1user2[Smartphone User - WiFi Roaming];
+    node1user1 <--> commsNode1;
+    node1user1 <--> commsNode2;
+    node1user2 <--> commsNode2;
+    node1user2 <--> commsNode3;
+```
+Links:
+- https://www.reddit.com/r/HomeNetworking/comments/hxal50/multiple_access_points_with_the_same_ssid/
 
 ## Hardware
 
