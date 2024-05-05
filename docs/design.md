@@ -54,6 +54,10 @@ flowchart BT;
     commsNode3 <--> uhf-vhf;
 ```
 
+## Networking
+
+https://www.reddit.com/r/HomeNetworking/comments/hxal50/multiple_access_points_with_the_same_ssid/
+
 ## Hardware
 
 ## Frontend
