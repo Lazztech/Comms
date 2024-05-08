@@ -54,35 +54,6 @@ flowchart BT;
     commsNode3 <--> uhf-vhf;
 ```
 
-## Requirements
-
-| # |  Category | Requirement |
-| -------- | ------- | ------- |
-| 1 | Hardware | must be portable |
-| 2 | Hardware | must be powerable via usb |
-| 3 | Hardware | must run for hours on a 10,000 mha battery bank |
-| 4 | Hardware | must serve a 2.4Ghz wifi access point |
-| x | Hardware | wifi access point must be reach 45 meters |
-| x | Hardware | must be able to output and recieve audio to various 2 way radios |
-| x | Hardware | must allow for wifi roaming |
-| x | Hardware | must have sufficient storage space for multiple days worth of data and audio persistence |
-| x | Server | must record audio sent and recieved via the 2 way radio |
-| x | Server | must store timestamps for begining and end of 2 way radio audio recordings |
-| x | Server | must be accessible via the hardware wifi access point's local area network |
-| x | Server | must not require any access to the internet |
-| x | Server | must persist data between power cycles |
-| x | Server | must support web push notifications without the need of any external services |
-| x | Server | must be able to push updates to the client |
-| x | Server | must be able to transcribe audio recordings and persist the results |
-| x | Client | must be accessible via iOS and Android web browsers |
-| x | Client | must be installable as a progressive web app |
-| x | Client | must be able to recieve and update the UI upon server side pushed data |
-| x | Client | must be able to recieve web push notifications |
-| x | Client | must be resiliant to momentary connectivity losses with the server |
-| x | Client | must be able to gracefully handle wifi roaming between servers |
-| x | x |  |
-
-
 ## Networking
 
 - wifi roaming
