@@ -54,6 +54,15 @@ flowchart BT;
     commsNode3 <--> uhf-vhf;
 ```
 
+## Requirements
+
+| # |  Category | Requirement |
+| -------- | ------- | ------- |
+| 1 | Hardware | must be portable |
+| 2 | Hardware | must run for hours on battery |
+| 3 | |
+
+
 ## Networking
 
 - wifi roaming
@@ -80,8 +89,24 @@ Links:
 
 ## Hardware
 
-## Frontend
+Fundementally there are 3 components to setting up a "Comms Node", a computer with WiFi that can serve an access point, a 2 way radio, and a means of wiring the radio as an audio input/output device to the computer.
+
+#### P.O.C. Setup:
+- TIDRADIO TD-H3 GMRS Radio https://a.co/d/cGzM4UL
+- K type APRS Cable https://a.co/d/e2LOQvZ
 
 ## Backend
 
-## Appendix
+https://docs.nestjs.com/
+
+#### Transcription:
+- https://github.com/ariym/whisper-node
+
+## Notifications
+
+https://docs.nestjs.com/techniques/server-sent-events
+https://medium.com/@dnyaneshwarsukashe/implementing-web-push-notifications-in-angular-and-nestjs-4d33a8e14af5
+
+## Frontend
+
+https://nextjs.org/
