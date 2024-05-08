@@ -25,9 +25,10 @@
 | 6 | Server | must not require any access to the internet |
 | 7 | Server | must persist data between power cycles |
 | 8 | Server | must support web push notifications without the need of any external services |
-| 9 | Server | must be able to push updates to the client |
-| 10 | Server | must be able to transcribe audio recordings and persist the results |
-| 11 | Server | must be deployable via a docker container |
+| 9 | Server | must send a web push notification with a link on each message recieved and sent |
+| 10 | Server | must be able to push updates to the client |
+| 11 | Server | must be able to transcribe audio recordings and persist the results |
+| 12 | Server | must be deployable via a docker container |
 
 ## Client Requirements
 
