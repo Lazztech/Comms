@@ -29,6 +29,8 @@
 | 10 | Server | must be able to push updates to the client |
 | 11 | Server | must be able to transcribe audio recordings and persist the results |
 | 12 | Server | must be deployable via a docker container |
+| 13 | Server | queue voice messages to be sent until the line is open |
+| 14 | Server | must not dominate airwaves to allow for other nodes to broadcast |
 
 ## Client Requirements
 
@@ -49,3 +51,5 @@
 | 13 | Client | must show duration of audio messages |
 | 14 | Client | must show date/time stamps of audio messages |
 | 15 | Client | must show date labels dividing audio message timeline |
+| 16 | Client | must show loading indicator until transcription is ready |
+| 16 | Client | must show loading indicator until sent voice message is broadcasted |
