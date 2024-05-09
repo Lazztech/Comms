@@ -90,9 +90,6 @@ Fundementally there are 3 components to setting up a "Comms Node", a computer wi
 
 https://docs.nestjs.com/
 
-#### Transcription:
-- https://github.com/ariym/whisper-node
-
 ## Notifications
 
 https://docs.nestjs.com/techniques/server-sent-events
