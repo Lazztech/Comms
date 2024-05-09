@@ -45,10 +45,8 @@
 | 8 | Client | must be able to play live audio stream of incoming audio messages |
 | 9 | Client | must be able to record and send audio messages to the server for broadcast |
 | 10 | Client | must show a timeline of sent and recieved audio messages |
-| 11 | Client | must show transcriptions of sent and recieved audio messages |
-| 12 | Client | must be able to replay sent and recieved audio messages |
-| 13 | Client | must show duration of audio messages |
-| 14 | Client | must show date/time stamps of audio messages |
-| 15 | Client | must show date labels dividing audio message timeline |
-| 16 | Client | must show loading indicator until transcription is ready |
-| 16 | Client | must show loading indicator until sent voice message is broadcasted |
+| 11 | Client | must be able to replay sent and recieved audio messages |
+| 12 | Client | must show duration of audio messages |
+| 13 | Client | must show date/time stamps of audio messages |
+| 14 | Client | must show date labels dividing audio message timeline |
+| 15 | Client | must show loading indicator until sent voice message is broadcasted |
