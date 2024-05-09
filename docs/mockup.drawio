@@ -1,0 +1,316 @@
+<mxfile host="65bd71144e">
+    <diagram id="KTIx14ktJnY5_gkWbMu6" name="Page-1">
+        <mxGraphModel dx="750" dy="595" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios7.misc.iphone;strokeColor=#c0c0c0;" vertex="1" parent="1">
+                    <mxGeometry x="210" y="120" width="200" height="400" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="" style="html=1;shadow=0;dashed=0;shape=mxgraph.ios.iTopBarLocked;strokeWidth=1;sketch=0;" vertex="1" parent="1">
+                    <mxGeometry x="222.5" y="180" width="175" height="15" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="CARRIER" style="html=1;shadow=0;dashed=0;shape=mxgraph.ios.anchor;align=left;fontSize=7.5;spacingLeft=18;fontColor=#cccccc;" vertex="1" parent="10">
+                    <mxGeometry y="2" width="50" height="13" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="210" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="4:36pm" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="210" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="31s" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="310" y="210" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="" style="html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7ui.downloadBar;verticalAlign=middle;fontSize=8;buttonText=;barPos=30;fillColor=#aaaaaa;strokeColor=#0080f0;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="220" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.play;gradientColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="218" width="21" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="260" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="4:34pm" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="260" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="31s" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="310" y="260" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="" style="html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7ui.downloadBar;verticalAlign=middle;fontSize=8;buttonText=;barPos=30;fillColor=#aaaaaa;strokeColor=#0080f0;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="270" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.play;gradientColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="268" width="21" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="310" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="4:18pm" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="310" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="31s" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="310" y="310" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="" style="html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7ui.downloadBar;verticalAlign=middle;fontSize=8;buttonText=;barPos=30;fillColor=#aaaaaa;strokeColor=#0080f0;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="320" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.play;gradientColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="318" width="21" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="360" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="4:09pm" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="360" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="31s" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="310" y="360" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="" style="html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7ui.downloadBar;verticalAlign=middle;fontSize=8;buttonText=;barPos=30;fillColor=#aaaaaa;strokeColor=#0080f0;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="370" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.play;gradientColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="368" width="21" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="410" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="2:44pm" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="410" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="31s" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="310" y="410" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="" style="html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7ui.downloadBar;verticalAlign=middle;fontSize=8;buttonText=;barPos=30;fillColor=#aaaaaa;strokeColor=#0080f0;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="420" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.play;gradientColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="418" width="21" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="" style="ellipse;shape=doubleEllipse;whiteSpace=wrap;html=1;aspect=fixed;gradientColor=none;strokeColor=#00FF00;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="342" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#2D7600;shadow=0;dashed=0;shape=mxgraph.ios7.icons.microphone;fillColor=#60a917;fontColor=#ffffff;" vertex="1" parent="1">
+                    <mxGeometry x="304" y="367" width="12" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="222.5" y="430" width="175" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.pause;pointerEvents=1;gradientColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="367" y="436.5" width="14" height="17" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="" style="html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios7ui.slider;barPos=20;strokeColor=#0080f0;strokeColor2=#a0a0a0;gradientColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="437.5" width="130" height="15" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="" style="html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios7.misc.iphone;strokeColor=#c0c0c0;" vertex="1" parent="1">
+                    <mxGeometry x="479" y="120" width="200" height="400" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="" style="html=1;shadow=0;dashed=0;shape=mxgraph.ios.iTopBarLocked;strokeWidth=1;sketch=0;" vertex="1" parent="1">
+                    <mxGeometry x="491.5" y="180" width="175" height="15" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="CARRIER" style="html=1;shadow=0;dashed=0;shape=mxgraph.ios.anchor;align=left;fontSize=7.5;spacingLeft=18;fontColor=#cccccc;" vertex="1" parent="48">
+                    <mxGeometry y="2" width="50" height="13" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="499" y="210" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="4:36pm" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="509" y="210" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="31s" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="579" y="210" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="" style="html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7ui.downloadBar;verticalAlign=middle;fontSize=8;buttonText=;barPos=30;fillColor=#aaaaaa;strokeColor=#0080f0;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="509" y="220" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.play;gradientColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="629" y="218" width="21" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="499" y="260" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" value="4:34pm" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="509" y="260" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="31s" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="579" y="260" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" value="" style="html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7ui.downloadBar;verticalAlign=middle;fontSize=8;buttonText=;barPos=30;fillColor=#aaaaaa;strokeColor=#0080f0;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="509" y="270" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="59" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.play;gradientColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="629" y="268" width="21" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="60" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="499" y="310" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="61" value="4:18pm" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="509" y="310" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="62" value="31s" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="579" y="310" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="63" value="" style="html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7ui.downloadBar;verticalAlign=middle;fontSize=8;buttonText=;barPos=30;fillColor=#aaaaaa;strokeColor=#0080f0;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="509" y="320" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="64" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.play;gradientColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="629" y="318" width="21" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="65" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="499" y="360" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="66" value="4:09pm" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="509" y="360" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="67" value="31s" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="579" y="360" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="68" value="" style="html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7ui.downloadBar;verticalAlign=middle;fontSize=8;buttonText=;barPos=30;fillColor=#aaaaaa;strokeColor=#0080f0;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="509" y="370" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="69" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.play;gradientColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="629" y="368" width="21" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="70" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="499" y="410" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="71" value="2:44pm" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="509" y="410" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="72" value="31s" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="579" y="410" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="73" value="" style="html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7ui.downloadBar;verticalAlign=middle;fontSize=8;buttonText=;barPos=30;fillColor=#aaaaaa;strokeColor=#0080f0;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="509" y="420" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="74" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.play;gradientColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="629" y="418" width="21" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="75" value="" style="ellipse;shape=doubleEllipse;whiteSpace=wrap;html=1;aspect=fixed;gradientColor=none;strokeColor=#FF0000;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="539" y="342" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="76" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#6F0000;shadow=0;dashed=0;shape=mxgraph.ios7.icons.microphone;fillColor=#a20025;fontColor=#ffffff;" vertex="1" parent="1">
+                    <mxGeometry x="573" y="367" width="12" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="77" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="491.5" y="430" width="175" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="79" value="" style="html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios7ui.slider;barPos=20;strokeColor=#314354;strokeColor2=#a0a0a0;fillColor=#647687;fontColor=#ffffff;" vertex="1" parent="1">
+                    <mxGeometry x="499" y="437.5" width="130" height="15" as="geometry"/>
+                </mxCell>
+                <mxCell id="80" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#314354;shadow=0;dashed=0;shape=mxgraph.ios7.icons.play;fillColor=#647687;fontColor=#ffffff;" vertex="1" parent="1">
+                    <mxGeometry x="639" y="436.5" width="11" height="17" as="geometry"/>
+                </mxCell>
+                <mxCell id="82" value="" style="html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios7.misc.iphone;strokeColor=#c0c0c0;" vertex="1" parent="1">
+                    <mxGeometry x="740" y="120" width="200" height="400" as="geometry"/>
+                </mxCell>
+                <mxCell id="83" value="" style="html=1;shadow=0;dashed=0;shape=mxgraph.ios.iTopBarLocked;strokeWidth=1;sketch=0;" vertex="1" parent="1">
+                    <mxGeometry x="752.5" y="180" width="175" height="15" as="geometry"/>
+                </mxCell>
+                <mxCell id="84" value="CARRIER" style="html=1;shadow=0;dashed=0;shape=mxgraph.ios.anchor;align=left;fontSize=7.5;spacingLeft=18;fontColor=#cccccc;" vertex="1" parent="83">
+                    <mxGeometry y="2" width="50" height="13" as="geometry"/>
+                </mxCell>
+                <mxCell id="85" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="760" y="210" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="86" value="4:36pm" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="770" y="210" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="87" value="31s" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="840" y="210" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="88" value="" style="html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7ui.downloadBar;verticalAlign=middle;fontSize=8;buttonText=;barPos=30;fillColor=#aaaaaa;strokeColor=#0080f0;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="770" y="220" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="90" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="760" y="260" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="91" value="4:34pm" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="770" y="260" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="92" value="31s" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="840" y="260" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="93" value="" style="html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7ui.downloadBar;verticalAlign=middle;fontSize=8;buttonText=;barPos=30;fillColor=#aaaaaa;strokeColor=#0080f0;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="770" y="270" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="94" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.play;gradientColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="890" y="268" width="21" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="95" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="760" y="310" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="96" value="4:18pm" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="770" y="310" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="97" value="31s" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="840" y="310" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="98" value="" style="html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7ui.downloadBar;verticalAlign=middle;fontSize=8;buttonText=;barPos=30;fillColor=#aaaaaa;strokeColor=#0080f0;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="770" y="320" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="99" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.play;gradientColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="890" y="318" width="21" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="100" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="760" y="360" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="101" value="4:09pm" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="770" y="360" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="102" value="31s" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="840" y="360" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="103" value="" style="html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7ui.downloadBar;verticalAlign=middle;fontSize=8;buttonText=;barPos=30;fillColor=#aaaaaa;strokeColor=#0080f0;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="770" y="370" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="104" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.play;gradientColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="890" y="368" width="21" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="105" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="760" y="410" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="106" value="2:44pm" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="770" y="410" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="107" value="31s" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="840" y="410" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="108" value="" style="html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7ui.downloadBar;verticalAlign=middle;fontSize=8;buttonText=;barPos=30;fillColor=#aaaaaa;strokeColor=#0080f0;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="770" y="420" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="109" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.play;gradientColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="890" y="418" width="21" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="110" value="" style="ellipse;shape=doubleEllipse;whiteSpace=wrap;html=1;aspect=fixed;gradientColor=none;strokeColor=#999999;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="800" y="342" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="111" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#314354;shadow=0;dashed=0;shape=mxgraph.ios7.icons.microphone;fillColor=#647687;fontColor=#ffffff;" vertex="1" parent="1">
+                    <mxGeometry x="834" y="367" width="12" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="112" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="752.5" y="430" width="175" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="114" value="" style="html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios7ui.slider;barPos=20;strokeColor=#314354;strokeColor2=#a0a0a0;fillColor=#647687;fontColor=#ffffff;" vertex="1" parent="1">
+                    <mxGeometry x="760" y="437.5" width="130" height="15" as="geometry"/>
+                </mxCell>
+                <mxCell id="117" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#314354;shadow=0;dashed=0;shape=mxgraph.ios7.icons.play;fillColor=#647687;fontColor=#ffffff;" vertex="1" parent="1">
+                    <mxGeometry x="900" y="436.5" width="11" height="17" as="geometry"/>
+                </mxCell>
+                <mxCell id="118" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.pause;pointerEvents=1;gradientColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="886" y="215" width="24" height="27" as="geometry"/>
+                </mxCell>
+                <mxCell id="119" value="Listening to Broadcast" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="260" y="60" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="120" value="Broadcasting" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="529" y="60" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="121" value="Listening to Recording" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="790" y="60" width="100" height="40" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
