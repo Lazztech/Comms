@@ -88,13 +88,12 @@ Fundementally there are 3 components to setting up a "Comms Node", a computer wi
 
 ## Backend
 
-https://docs.nestjs.com/
-
-## Notifications
-
-https://docs.nestjs.com/techniques/server-sent-events
-https://medium.com/@dnyaneshwarsukashe/implementing-web-push-notifications-in-angular-and-nestjs-4d33a8e14af5
+- https://docs.nestjs.com/
+- https://docs.nestjs.com/techniques/server-sent-events
+- https://medium.com/@dnyaneshwarsukashe/implementing-web-push-notifications-in-angular-and-nestjs-4d33a8e14af5
 
 ## Frontend
-
-https://nextjs.org/
+- https://nextjs.org/
+- https://daisyui.com/
+- https://medium.com/readytowork-org/implementing-pwa-in-the-next-13-application-3e46f6b3f6d8
+- https://www.npmjs.com/package/next-pwa
