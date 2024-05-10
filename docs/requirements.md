@@ -25,7 +25,7 @@
 | 6 | Server | must not require any access to the internet |
 | 7 | Server | must persist data between power cycles |
 | 8 | Server | must support web push notifications without the need of any external services |
-| 9 | Server | must send a web push notification with a link on each message recieved and sent |
+| 9 | Server | must send a web push notification with a link on each message recieved and sent audio clip |
 | 10 | Server | must be able to push updates to the client |
 | 11 | Server | must be deployable via a docker container |
 | 12 | Server | queue voice messages to be sent until the line is open |
