@@ -87,8 +87,18 @@ Fundementally there are 3 components to setting up a "Comms Node", a computer wi
 - K type APRS Cable https://a.co/d/e2LOQvZ
 
 ## Backend
-
 - https://docs.nestjs.com/
+
+**Persistance:**
+- Mikroorm
+- SQLite
+- Local Filestorage
+
+**Audio:**
+- https://www.npmjs.com/package/@mrkwskiti/fluent-ffmpeg-nestjs
+- https://github.com/fluent-ffmpeg/node-fluent-ffmpeg
+
+**Notifications:**
 - https://docs.nestjs.com/techniques/server-sent-events
 - https://medium.com/@dnyaneshwarsukashe/implementing-web-push-notifications-in-angular-and-nestjs-4d33a8e14af5
 
@@ -97,3 +107,5 @@ Fundementally there are 3 components to setting up a "Comms Node", a computer wi
 - https://daisyui.com/
 - https://medium.com/readytowork-org/implementing-pwa-in-the-next-13-application-3e46f6b3f6d8
 - https://www.npmjs.com/package/next-pwa
+
+## Deployment
