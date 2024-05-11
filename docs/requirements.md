@@ -11,25 +11,19 @@
 | 5 | Hardware | wifi access point must be reach 45 meters |
 | 6 | Hardware | must be able to output and recieve audio to various 2 way radios |
 | 7 | Hardware | must allow for wifi roaming |
-~~| 8 | Hardware | must have sufficient storage space for multiple days worth of data and audio persistence |~~
 
 ## Server Requirements
 
 | # |  Category | Requirement |
 | -------- | ------- | ------- |
-~~| 1 | Server | must record audio sent and recieved via the 2 way radio |~~
-~~| 2 | Server | must be able to stream audio recordings |~~
-| 3 | Server | must be able to serve a stream of live inbound and outbound audio |
-~~| 4 | Server | must store timestamps for begining and end of 2 way radio audio recordings |~~
-| 5 | Server | must be accessible via the hardware wifi access point's local area network |
-| 6 | Server | must not require any access to the internet |
-| 7 | Server | must persist data between power cycles |
-| 8 | Server | must support web push notifications without the need of any external services |
-~~| 9 | Server | must send a web push notification with a link on each message recieved and sent audio clip |~~
-| 10 | Server | must be able to push updates to the client |
-| 11 | Server | must be deployable via a docker container |
-~~| 12 | Server | queue voice messages to be sent until the line is open |~~
-| 13 | Server | must not dominate airwaves to allow for other nodes to broadcast |
+| 1 | Server | must be able to serve a stream of live inbound and outbound audio |
+| 2 | Server | must be accessible via the hardware wifi access point's local area network |
+| 3 | Server | must not require any access to the internet |
+| 4 | Server | must persist data between power cycles |
+| 5 | Server | must support web push notifications without the need of any external services |
+| 6 | Server | must be able to push updates to the client |
+| 7 | Server | must be deployable via a docker container |
+| 8 | Server | must not dominate airwaves to allow for other nodes to broadcast |
 
 ## Client Requirements
 
@@ -43,10 +37,5 @@
 | 6 | Client | must be able to gracefully handle wifi roaming between servers |
 | 7 | Client | must maintain interactivity when offline |
 | 8 | Client | must be able to play live audio stream of incoming audio messages |
-~~| 9 | Client | must be able to record and send audio messages to the server for broadcast |~~
-| 10 | Client | must show a timeline of sent and recieved audio messages |
-~~| 11 | Client | must be able to replay sent and recieved audio messages |~~
-~~| 12 | Client | must show duration of audio messages |~~
-~~| 13 | Client | must show date/time stamps of audio messages |~~
-~~| 14 | Client | must show date labels dividing audio message timeline |~~
-| 15 | Client | must show loading indicator until sent voice message is finished being broadcasted |
+| 9 | Client | must be able to record audio messages and send them to the server for broadcast |
+| 10 | Client | must show loading indicator until sent voice message is finished being broadcasted |
