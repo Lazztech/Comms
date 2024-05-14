@@ -111,4 +111,21 @@ Fundementally there are 3 components to setting up a "Comms Node", a computer wi
 ## Devops
 
 **Monorepo:**
-https://docs.npmjs.com/cli/v8/using-npm/workspaces
+https://docs.npmjs.com/cli/v10/using-npm/workspaces
+https://www.youtube.com/watch?v=tLyis8c4vC0
+
+```bash
+$ npm init -y
+$ mkdir packages
+```
+
+Add `"workspaces": ["./packages/*"],` to the `package.json`.
+
+**Nest.js workspace:**
+
+```bash
+$ cd packages
+$ nest new backend --skip-git --skip-install
+```
+
+**Next.js workspace:**
