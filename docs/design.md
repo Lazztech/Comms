@@ -108,4 +108,7 @@ Fundementally there are 3 components to setting up a "Comms Node", a computer wi
 - https://medium.com/readytowork-org/implementing-pwa-in-the-next-13-application-3e46f6b3f6d8
 - https://www.npmjs.com/package/next-pwa
 
-## Deployment
+## Devops
+
+**Monorepo:**
+https://medium.com/@wwdhfernando/efficient-deployment-of-next-js-24fd2825d6b4
