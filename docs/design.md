@@ -128,4 +128,9 @@ $ cd packages
 $ nest new backend --skip-git --skip-install
 ```
 
+Then add in a `.gitignore` from https://raw.githubusercontent.com/nestjs/typescript-starter/master/.gitignore
+
 **Next.js workspace:**
+
+## Appendix
+- [Initializing NestJS app within NPM workspaces](https://www.youtube.com/watch?v=tLyis8c4vC0)
