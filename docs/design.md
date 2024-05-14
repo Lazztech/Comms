@@ -111,4 +111,4 @@ Fundementally there are 3 components to setting up a "Comms Node", a computer wi
 ## Devops
 
 **Monorepo:**
-https://medium.com/@wwdhfernando/efficient-deployment-of-next-js-24fd2825d6b4
+https://docs.npmjs.com/cli/v8/using-npm/workspaces
