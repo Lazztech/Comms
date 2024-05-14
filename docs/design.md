@@ -77,13 +77,22 @@ flowchart BT;
 
 ## Section 1.2 - Hardware
 
-Fundementally there are 3 components to setting up a "Comms Node", a computer with WiFi that can serve an access point, a 2 way radio (See appendix link #2), and a means of wiring the radio as an audio input/output device to the computer (See appendix link #3).
+Fundementally there are 3 components to setting up a "Comms Node", a computer with WiFi that can serve an access point, a 2 way radio (See appendix link #2), and a means of wiring the radio as an audio input/output device to the computer (See appendix link #3). This has been verified to work as an audio input/output from a computer, while the 2 way radio is configured to enable VOX.
 
 ## Section 1.3 - Backend
 For the backend NestJS will be used (See appendix link #4).
 
 **Section 1.3.1 - Audio:**
 Audio manipulation and HLS stream will be managed with ffmpeg(see appendix #5).
+
+This will take place as a child process of the backend, which will be instructed to form an HLS stream from the microphone input, which will be taken from the output of the 2 way radio. It will then be served via the nestjs Serve Static module.
+
+```
+# example route of hls stream being served
+http://localhost:3000/output.m3u8
+```
+
+Additionally FFMPEG may be instructed to keep a set number of HLS segments then auto delete the old segments. This reduces file storage concerns as it cleans up after itself.
 
 **Section 1.3.2 - Notifications:**
 - https://docs.nestjs.com/techniques/server-sent-events

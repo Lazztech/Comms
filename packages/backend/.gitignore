@@ -398,3 +398,7 @@ Temporary Items
 dist
 .webpack
 .serverless/**/*.zip
+
+# HLS
+public/output.m3u8
+public/output*.ts
