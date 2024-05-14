@@ -132,5 +132,12 @@ Then add in a `.gitignore` from https://raw.githubusercontent.com/nestjs/typescr
 
 **Next.js workspace:**
 
+```bash
+$ cd packages
+$ npx create-next-app@latest ./client --no-git
+$ cd client
+$ rm -rf node_modules
+```
+
 ## Appendix
 - [Initializing NestJS app within NPM workspaces](https://www.youtube.com/watch?v=tLyis8c4vC0)
