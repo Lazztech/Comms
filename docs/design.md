@@ -140,4 +140,4 @@ $ rm -rf node_modules
 
 | # |  Description | Date |
 | -------- | ------- | ------- |
-| 1 | Enitial Design | 5/13/24 |
+| 1 | Initial Design | 5/13/24 |
