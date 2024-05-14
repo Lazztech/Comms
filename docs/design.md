@@ -87,16 +87,11 @@ Fundementally there are 3 components to setting up a "Comms Node", a computer wi
 ## Section 1.3 - Backend
 - https://docs.nestjs.com/
 
-**Section 1.3.1 - Persistance:**
-- Mikroorm
-- SQLite
-- Local Filestorage
-
-**Section 1.3.2 - Audio:**
+**Section 1.3.1 - Audio:**
 - https://www.npmjs.com/package/@mrkwskiti/fluent-ffmpeg-nestjs
 - https://github.com/fluent-ffmpeg/node-fluent-ffmpeg
 
-**Section 1.3.3 - Notifications:**
+**Section 1.3.2 - Notifications:**
 - https://docs.nestjs.com/techniques/server-sent-events
 - https://medium.com/@dnyaneshwarsukashe/implementing-web-push-notifications-in-angular-and-nestjs-4d33a8e14af5
 
