@@ -57,7 +57,6 @@ flowchart BT;
 ## Section 1.1 - Networking
 The objective of this section is to capture the WiFi capabilities and requirement designs. This includes ensuring support for WiFi Roaming between nodes (See appendix link #1).
 
-- wifi roaming
 - connect to AP via qr code
 
 ```mermaid
@@ -78,18 +77,13 @@ flowchart BT;
 
 ## Section 1.2 - Hardware
 
-Fundementally there are 3 components to setting up a "Comms Node", a computer with WiFi that can serve an access point, a 2 way radio, and a means of wiring the radio as an audio input/output device to the computer.
-
-**Section 1.2.3 - P.O.C. Setup:**
-- TIDRADIO TD-H3 GMRS Radio https://a.co/d/cGzM4UL
-- K type APRS Cable https://a.co/d/e2LOQvZ
+Fundementally there are 3 components to setting up a "Comms Node", a computer with WiFi that can serve an access point, a 2 way radio (See appendix link #2), and a means of wiring the radio as an audio input/output device to the computer (See appendix link #3).
 
 ## Section 1.3 - Backend
-- https://docs.nestjs.com/
+For the backend NestJS will be used (See appendix link #4).
 
 **Section 1.3.1 - Audio:**
-- https://www.npmjs.com/package/@mrkwskiti/fluent-ffmpeg-nestjs
-- https://github.com/fluent-ffmpeg/node-fluent-ffmpeg
+Audio manipulation and HLS stream will be managed with ffmpeg(see appendix #5).
 
 **Section 1.3.2 - Notifications:**
 - https://docs.nestjs.com/techniques/server-sent-events
@@ -133,8 +127,12 @@ $ rm -rf node_modules
 ```
 
 ## Appendix
-- 1. https://community.fs.com/article/what-is-wifi-roaming-and-how-does-it-work.html
-- [Initializing NestJS app within NPM workspaces](https://www.youtube.com/watch?v=tLyis8c4vC0)
+1. https://community.fs.com/article/what-is-wifi-roaming-and-how-does-it-work.html
+2. TIDRADIO TD-H3 GMRS Radio https://a.co/d/cGzM4UL
+3. K type APRS Cable https://a.co/d/e2LOQvZ
+4. https://docs.nestjs.com
+5. https://www.npmjs.com/package/@mrkwskiti/fluent-ffmpeg-nestjs
+2. [Initializing NestJS app within NPM workspaces](https://www.youtube.com/watch?v=tLyis8c4vC0)
 
 ## Revision History
 
