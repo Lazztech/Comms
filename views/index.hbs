@@ -3,18 +3,17 @@
   <head>
     <meta charset="utf-8" />
     <title>App</title>
-    <script
-      src='https://unpkg.com/htmx.org@1.9.10'
-      integrity='sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC'
-      crossorigin='anonymous'
-    ></script>
+    <!-- Include the HTMX library on your page -->
+    <script src='/htmx.min.js.gz'></script>
     <!-- Include the Alpine library on your page -->
-    <script src="//unpkg.com/alpinejs" defer></script>
-
+    <script src="/alpinejs.min.js" defer></script>
     <!-- Include the TailwindCSS library on your page -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/tailwind3.4.3.min.js"></script>
   </head>
-  <body>
-    {{ message }}
+  <body class="flex items-start justify-center h-full bg-gray-50">
+    <div class="flex items-center justify-center w-full max-w-full">
+        <!-- Element Here -->
+        {{ message }}
+    </div>
   </body>
 </html>
