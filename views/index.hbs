@@ -9,11 +9,32 @@
     <script src="/alpinejs.min.js" defer></script>
     <!-- Include the TailwindCSS library on your page -->
     <script src="/tailwind3.4.3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
   </head>
   <body class="flex items-start justify-center h-full bg-gray-50">
     <div class="flex items-center justify-center w-full max-w-full">
         <!-- Element Here -->
         {{ message }}
+        <video id="video" controls></video>
     </div>
   </body>
+  <script>
+  var video = document.getElementById('video');
+  var videoSrc = '/output.m3u8';
+  if (Hls.isSupported()) {
+    var hls = new Hls();
+    hls.loadSource(videoSrc);
+    hls.attachMedia(video);
+  }
+  // HLS.js is not supported on platforms that do not have Media Source
+  // Extensions (MSE) enabled.
+  //
+  // When the browser has built-in HLS support (check using `canPlayType`),
+  // we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video
+  // element through the `src` property. This is using the built-in support
+  // of the plain video element, without using HLS.js.
+  else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+    video.src = videoSrc;
+  }
+</script>
 </html>
