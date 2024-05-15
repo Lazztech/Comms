@@ -102,6 +102,7 @@ Additionally FFMPEG may be instructed to keep a set number of HLS segments then 
 Low-js HOWL Stack(Hypermedia On Whatever you’d Like). And what I'd like is NestJS MVC with HandlebarsJS as the templating engine. For styling pines UI fills any remaining gaps with a tailwind and alpinejs based component library.
 
 - https://htmx.org/
+- https://handlebarsjs.com/
 - https://alpinejs.dev/
 - https://tailwindcss.com/
 - https://devdojo.com/pines
@@ -128,5 +129,5 @@ Low-js HOWL Stack(Hypermedia On Whatever you’d Like). And what I'd like is Nes
 2. TIDRADIO TD-H3 GMRS Radio https://a.co/d/cGzM4UL
 3. K type APRS Cable https://a.co/d/e2LOQvZ
 4. https://docs.nestjs.com
-5. https://www.npmjs.com/package/@mrkwskiti/fluent-ffmpeg-nestjs
-2. [Initializing NestJS app within NPM workspaces](https://www.youtube.com/watch?v=tLyis8c4vC0)
+5. https://dev.to/diegochavez/htmx-and-nestjs-a-quick-overview-15g5
+6. [How I fell in love with low-js](https://edofic.com/posts/2022-01-28-low-js/)
