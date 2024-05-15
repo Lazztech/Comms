@@ -82,7 +82,7 @@ Fundementally there are 3 components to setting up a "Comms Node", a computer wi
 ## 3 - Backend
 For the backend NestJS will be used (See appendix link #4).
 
-**3.1 - Audio:**
+### 3.1 - Audio
 Audio manipulation and HLS stream will be managed with ffmpeg(see appendix #5).
 
 This will take place as a child process of the backend, which will be instructed to form an HLS stream from the microphone input, which will be taken from the output of the 2 way radio. It will then be served via the nestjs Serve Static module.
@@ -94,15 +94,16 @@ http://localhost:3000/output.m3u8
 
 Additionally FFMPEG may be instructed to keep a set number of HLS segments then auto delete the old segments. This reduces file storage concerns as it cleans up after itself.
 
-**3.2 - Notifications:**
+### 3.2 - Notifications
 - https://docs.nestjs.com/techniques/server-sent-events
 - https://medium.com/@dnyaneshwarsukashe/implementing-web-push-notifications-in-angular-and-nestjs-4d33a8e14af5
 
 ## 4 - Frontend
-Low-js, NestJS MVC with HandlebarsJS as the templating engine.
+Low-js HOWL Stack(Hypermedia On Whatever you’d Like). And what I'd like is NestJS MVC with HandlebarsJS as the templating engine. For styling pines UI fills any remaining gaps with a tailwind and alpinejs based component library.
 
 - https://htmx.org/
-- https://daisyui.com/
+- https://alpinejs.dev/
+- https://tailwindcss.com/
 - https://devdojo.com/pines
 
 ## Revision History
@@ -114,6 +115,13 @@ Low-js, NestJS MVC with HandlebarsJS as the templating engine.
 ## Appendix
 
 **Section A - Terms:**
+1. Low-JS
+2. HOWL Stack
+3. NestJS
+4. MVC
+5. HandlebarsJS
+6. Tailwind
+7. Alpinejs
 
 **Section B - References:**
 1. https://community.fs.com/article/what-is-wifi-roaming-and-how-does-it-work.html
