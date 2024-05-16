@@ -115,6 +115,7 @@ This tailwind build process can be incorperated into the final build process, an
 ### 4.3 PWA (Progressive Web App)
 - https://blog.heroku.com/how-to-make-progressive-web-app
 - https://www.pwabuilder.com/imageGenerator
+- https://www.flaticon.com/free-icon/walkie-talkie_8989701
 
 ## Revision History
 
