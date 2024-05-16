@@ -1,0 +1,15 @@
+{
+    "name": "Lazztech.Comms",
+    "short_name": "LT.Comms",
+    "theme_color": "#000000",
+    "background_color": "#2196f3",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/",
+    "icons": [
+      {
+          "src": "/icons/1024.png",
+          "sizes": "1024x1024"
+      }
+    ]
+  }

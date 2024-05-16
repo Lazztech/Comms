@@ -112,6 +112,10 @@ Tailwind is best served in production with a treeshaking process to minimize the
 
 This tailwind build process can be incorperated into the final build process, and references as the staticly served css. See Appendix Section B reference #12 for more info. DaisyUI then also comes along for the ride as part of the `tailwind.config.js` in the build/pruning process.
 
+### 4.3 PWA (Progressive Web App)
+- https://blog.heroku.com/how-to-make-progressive-web-app
+- https://www.pwabuilder.com/imageGenerator
+
 ## Revision History
 
 | # |  Description | Date |

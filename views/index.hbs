@@ -2,7 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#000000"/>
     <title>App</title>
+    <!-- Include the PWA manifest on your page -->
+    <link rel="manifest" href="/manifest.json">
     <!-- Include the HTMX library on your page -->
     <script src='/htmx.min.js'></script>
     <!-- Include the TailwindCSS library on your page -->
@@ -50,5 +54,12 @@
     else if (video.canPlayType('application/vnd.apple.mpegurl')) {
         video.src = videoSrc;
     }
+</script>
+<script>
+ if (!navigator.serviceWorker.controller) {
+     navigator.serviceWorker.register("/sw.js").then(function(reg) {
+         console.log("Service worker has been registered for scope: " + reg.scope);
+     });
+ }
 </script>
 </html>
