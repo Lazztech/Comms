@@ -14,7 +14,7 @@
   </head>
   <body>
     <div class="flex flex-col h-screen">
-        <div class="flex items-center justify-between navbar bg-base-100">
+        <div class="flex items-center justify-between navbar bg-primary text-primary-content">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9.348 14.652a3.75 3.75 0 0 1 0-5.304m5.304 0a3.75 3.75 0 0 1 0 5.304m-7.425 2.121a6.75 6.75 0 0 1 0-9.546m9.546 0a6.75 6.75 0 0 1 0 9.546M5.106 18.894c-3.808-3.807-3.808-9.98 0-13.788m13.788 0c3.808 3.807 3.808 9.98 0 13.788M12 12h.008v.008H12V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
             </svg>
@@ -31,22 +31,22 @@
     </div>
   </body>
   <script>
-  var video = document.getElementById('video');
-  var videoSrc = '/output.m3u8';
-  if (Hls.isSupported()) {
-    var hls = new Hls();
-    hls.loadSource(videoSrc);
-    hls.attachMedia(video);
-  }
-  // HLS.js is not supported on platforms that do not have Media Source
-  // Extensions (MSE) enabled.
-  //
-  // When the browser has built-in HLS support (check using `canPlayType`),
-  // we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video
-  // element through the `src` property. This is using the built-in support
-  // of the plain video element, without using HLS.js.
-  else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-    video.src = videoSrc;
-  }
+    var video = document.getElementById('video');
+    var videoSrc = '/output.m3u8';
+    if (Hls.isSupported()) {
+        var hls = new Hls();
+        hls.loadSource(videoSrc);
+        hls.attachMedia(video);
+    }
+    // HLS.js is not supported on platforms that do not have Media Source
+    // Extensions (MSE) enabled.
+    //
+    // When the browser has built-in HLS support (check using `canPlayType`),
+    // we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video
+    // element through the `src` property. This is using the built-in support
+    // of the plain video element, without using HLS.js.
+    else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = videoSrc;
+    }
 </script>
 </html>
