@@ -55,7 +55,7 @@ flowchart BT;
 ```
 
 ## 1 - Networking
-The objective of this section is to capture the WiFi capabilities and requirement designs. This includes ensuring support for WiFi Roaming between nodes (See appendix link #1).
+The objective of this section is to capture the WiFi capabilities and requirement designs. This includes ensuring support for WiFi Roaming between nodes (See Appendix Section B Reference #1).
 
 - connect to AP via qr code
 
@@ -77,13 +77,13 @@ flowchart BT;
 
 ## 2 - Hardware
 
-Fundementally there are 3 components to setting up a "Comms Node", a computer with WiFi that can serve an access point, a 2 way radio (See appendix link #2), and a means of wiring the radio as an audio input/output device to the computer (See appendix link #3). This has been verified to work as an audio input/output from a computer, while the 2 way radio is configured to enable VOX.
+Fundementally there are 3 components to setting up a "Comms Node", a computer with WiFi that can serve an access point, a 2 way radio (See Appendix Section B Reference #2), and a means of wiring the radio as an audio input/output device to the computer (See Appendix Section B Reference #3). This has been verified to work as an audio input/output from a computer, while the 2 way radio is configured to enable VOX.
 
 ## 3 - Backend
-For the backend NestJS will be used (See appendix link #4).
+For the backend NestJS will be used (See Appendix Section B Reference #4).
 
 ### 3.1 - Audio
-Audio manipulation and HLS stream will be managed with ffmpeg(see appendix #5).
+Audio manipulation and HLS stream will be managed with ffmpeg(See Appendix Section B Reference #5).
 
 This will take place as a child process of the backend, which will be instructed to form an HLS stream from the microphone input, which will be taken from the output of the 2 way radio. It will then be served via the nestjs Serve Static module.
 
@@ -101,13 +101,16 @@ Additionally FFMPEG may be instructed to keep a set number of HLS segments then 
 ## 4 - Frontend
 React or other SPA technologies feel like overkill, though a purely server side rendered tool lacks the polish expected with modern web app.
 
-Low-js HOWL htmx Stack(Hypermedia On Whatever you’d Like). And what I'd like is NestJS MVC with HandlebarsJS as the templating engine. For styling tailwind/daisyui.
+HTMX is all the buzz right now as a "lowjs" alternative to frontend frameworks like React. This works in conjunction with NestJS MVC with HandlebarsJS as the templating engine and I believe will provide just enough interactivity for this project. For styling tailwindcss and the daisyui library should be more than sufficient.
 
-- https://htmx.org/
-- https://handlebarsjs.com/
-- https://tailwindcss.com/
-- https://daisyui.com/
-- https://stackoverflow.com/questions/71082709/how-to-use-tailwindcss-with-nestjs
+### 4.1 NestJS and HTMX
+- https://docs.nestjs.com/techniques/mvc
+- https://dev.to/diegochavez/htmx-and-nestjs-a-quick-overview-15g5
+
+### 4.2 NestJS and Tailwind
+Tailwind is best served in production with a treeshaking process to minimize the amount of code shipped over the wire to just what's being used. This is done as a build step and served as a custom bundle. This is different than other css libraries or frameworks that commonly recommend usage via a CDN.
+
+This tailwind build process can be incorperated into the final build process, and references as the staticly served css. See Appendix Section B reference #12 for more info. DaisyUI then also comes along for the ride as part of the `tailwind.config.js` in the build/pruning process.
 
 ## Revision History
 
@@ -133,3 +136,8 @@ Low-js HOWL htmx Stack(Hypermedia On Whatever you’d Like). And what I'd like i
 4. https://docs.nestjs.com
 5. https://dev.to/diegochavez/htmx-and-nestjs-a-quick-overview-15g5
 6. [How I fell in love with low-js](https://edofic.com/posts/2022-01-28-low-js/)
+8. https://htmx.org/
+9. https://handlebarsjs.com/
+10. https://tailwindcss.com/
+11. https://daisyui.com/
+12. https://stackoverflow.com/questions/71082709/how-to-use-tailwindcss-with-nestjs

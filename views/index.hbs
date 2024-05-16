@@ -8,8 +8,12 @@
     <!-- Include the Alpine library on your page -->
     <script src="/alpinejs.min.js" defer></script>
     <!-- Include the TailwindCSS library on your page -->
-    <script src="/tailwind3.4.3.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
+    {{#if isProd}}
+        <link href="/main.css" rel="stylesheet">
+    {{else}}
+        <script src="/tailwind3.4.3.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
+    {{/if}}
     <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
   </head>
   <body>
