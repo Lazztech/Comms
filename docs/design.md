@@ -101,13 +101,13 @@ Additionally FFMPEG may be instructed to keep a set number of HLS segments then 
 ## 4 - Frontend
 React or other SPA technologies feel like overkill, though a purely server side rendered tool lacks the polish expected with modern web app.
 
-Low-js HOWL Stack(Hypermedia On Whatever you’d Like). And what I'd like is NestJS MVC with HandlebarsJS as the templating engine. For styling pines UI fills any remaining gaps with a tailwind and alpinejs based component library.
+Low-js HOWL htmx Stack(Hypermedia On Whatever you’d Like). And what I'd like is NestJS MVC with HandlebarsJS as the templating engine. For styling tailwind/daisyui.
 
 - https://htmx.org/
 - https://handlebarsjs.com/
-- https://alpinejs.dev/
 - https://tailwindcss.com/
-- https://devdojo.com/pines
+- https://daisyui.com/
+- https://stackoverflow.com/questions/71082709/how-to-use-tailwindcss-with-nestjs
 
 ## Revision History
 
