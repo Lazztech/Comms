@@ -127,7 +127,6 @@ This tailwind build process can be incorperated into the final build process, an
 4. MVC
 5. HandlebarsJS
 6. Tailwind
-7. Alpinejs
 
 **Section B - References:**
 1. https://community.fs.com/article/what-is-wifi-roaming-and-how-does-it-work.html
