@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="#000000"/>
+    <meta name="theme-color" content="#000000" />
     <title>App</title>
     <!-- Include the PWA manifest on your page -->
     <link rel="manifest" href="/manifest.json">
@@ -11,18 +12,21 @@
     <script src='/htmx.min.js'></script>
     <!-- Include the TailwindCSS library on your page -->
     {{#if isProd}}
-        <link href="/main.css" rel="stylesheet">
+    <link href="/main.css" rel="stylesheet">
     {{else}}
-        <script src="/tailwind3.4.3.min.js"></script>
-        <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="/tailwind3.4.3.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
     {{/if}}
     <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="flex flex-col h-screen">
         <div class="flex items-center justify-between navbar bg-primary text-primary-content">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9.348 14.652a3.75 3.75 0 0 1 0-5.304m5.304 0a3.75 3.75 0 0 1 0 5.304m-7.425 2.121a6.75 6.75 0 0 1 0-9.546m9.546 0a6.75 6.75 0 0 1 0 9.546M5.106 18.894c-3.808-3.807-3.808-9.98 0-13.788m13.788 0c3.808 3.807 3.808 9.98 0 13.788M12 12h.008v.008H12V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9.348 14.652a3.75 3.75 0 0 1 0-5.304m5.304 0a3.75 3.75 0 0 1 0 5.304m-7.425 2.121a6.75 6.75 0 0 1 0-9.546m9.546 0a6.75 6.75 0 0 1 0 9.546M5.106 18.894c-3.808-3.807-3.808-9.98 0-13.788m13.788 0c3.808 3.807 3.808 9.98 0 13.788M12 12h.008v.008H12V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
             </svg>
             <p id="status" class="text-xl justify-center">{{ message }}</p>
             <audio id="video" controls></audio>
@@ -30,64 +34,66 @@
         <button class="btn btn-primary" id="finishButton">Send recording</button>
         <div class="flex flex-grow items-center justify-center">
             <button class="btn btn-circle btn-outline size-64" id="recordButton">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z" />
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z" />
                 </svg>
             </button>
         </div>
     </div>
-  </body>
-  <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
-    <script> 
-        let rec = null;
-        let audioStream = null;
+</body>
+<script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+<script>
+    let rec = null;
+    let audioStream = null;
 
-        const recordButton = document.getElementById("recordButton");
-        recordButton.addEventListener("click", startRecording);
+    const recordButton = document.getElementById("recordButton");
+    recordButton.addEventListener("click", startRecording);
 
-        const finishButton = document.getElementById("finishButton");
-        finishButton.addEventListener("click", finish);
+    const finishButton = document.getElementById("finishButton");
+    finishButton.addEventListener("click", finish);
 
-        function startRecording() {
-            let constraints = { audio: true, video:false };
-            recordButton.disabled = true;
-            navigator.mediaDevices.getUserMedia(constraints).then(function(stream) {
-                const audioContext = new window.AudioContext();
-                audioStream = stream;
-                const input = audioContext.createMediaStreamSource(stream);
-                rec = new Recorder(input, { numChannels: 1 })
-                rec.record()
-                document.getElementById("status").innerHTML = "Broadcasting"
-            }).catch(function(err) {
-                recordButton.disabled = false;
-            });
-        }
-
-        function finish() {
-            document.getElementById("status").innerHTML = "Converting audio to text..."
+    function startRecording() {
+        let constraints = { audio: true, video: false };
+        recordButton.disabled = true;
+        navigator.mediaDevices.getUserMedia(constraints).then(function (stream) {
+            const audioContext = new window.AudioContext();
+            audioStream = stream;
+            const input = audioContext.createMediaStreamSource(stream);
+            rec = new Recorder(input, { numChannels: 1 })
+            rec.record()
+            document.getElementById("status").innerHTML = "Broadcasting"
+        }).catch(function (err) {
             recordButton.disabled = false;
-            rec.stop();
-            audioStream.getAudioTracks()[0].stop();
-            rec.exportWAV(uploadSoundData);
-        }
+        });
+    }
 
-        function uploadSoundData(blob) {
-            const filename = "sound-file-" + new Date().getTime() + ".wav";
-            const formData = new FormData();
-            formData.append("audio_data", blob, filename);
-            
-            fetch('http://localhost:3000/broadcast', {
-                method: 'POST',
-                body: formData
-            }).then(async result => { 
-                document.getElementById("status").innerHTML = await result.text();
-            }).catch(error => { 
-                document.getElementById("status").innerHTML = "An error occurred: " + error;
-            })
-        }
+    function finish() {
+        document.getElementById("status").innerHTML = "Converting audio to text..."
+        recordButton.disabled = false;
+        rec.stop();
+        audioStream.getAudioTracks()[0].stop();
+        rec.exportWAV(uploadSoundData);
+    }
 
-    </script>
-  <script>
+    function uploadSoundData(blob) {
+        const filename = "sound-file-" + new Date().getTime() + ".wav";
+        const formData = new FormData();
+        formData.append("audio_data", blob, filename);
+
+        fetch('http://localhost:3000/broadcast', {
+            method: 'POST',
+            body: formData
+        }).then(async result => {
+            document.getElementById("status").innerHTML = await result.text();
+        }).catch(error => {
+            document.getElementById("status").innerHTML = "An error occurred: " + error;
+        })
+    }
+
+</script>
+<script>
     var video = document.getElementById('video');
     var videoSrc = '/output.m3u8';
     if (Hls.isSupported()) {
@@ -107,10 +113,11 @@
     }
 </script>
 <script>
- if (!navigator.serviceWorker.controller) {
-     navigator.serviceWorker.register("/sw.js").then(function(reg) {
-         console.log("Service worker has been registered for scope: " + reg.scope);
-     });
- }
+    if (!navigator.serviceWorker.controller) {
+        navigator.serviceWorker.register("/sw.js").then(function (reg) {
+            console.log("Service worker has been registered for scope: " + reg.scope);
+        });
+    }
 </script>
+
 </html>
