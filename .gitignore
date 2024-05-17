@@ -403,3 +403,6 @@ dist
 public/output.m3u8
 public/output*.ts
 public/main.css
+
+!data/.keep
+data/

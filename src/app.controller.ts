@@ -1,20 +1,27 @@
-import { Controller, Get, Render } from '@nestjs/common';
+import { Controller, Get, Post, Render, UploadedFile, UseInterceptors } from '@nestjs/common';
 import { AppService } from './app.service';
 import { ConfigService } from '@nestjs/config';
+import { FileInterceptor } from '@nestjs/platform-express';
 
 @Controller()
 export class AppController {
   constructor(
     private readonly appService: AppService,
     private readonly configService: ConfigService
-  ) {}
+  ) { }
 
   @Get()
   @Render('index')
   getHello(): any {
     return {
       isProd: this.configService.get('NODE_ENV') == 'prod',
-      message: this.appService.getHello() 
+      message: 'Idle'
     };
+  }
+
+  @Post('broadcast')
+  @UseInterceptors(FileInterceptor('audio_data'))
+  uploadFile(@UploadedFile() file: Express.Multer.File) {
+    console.log(file);
   }
 }
