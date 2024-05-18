@@ -31,7 +31,6 @@
             <p id="status" class="text-xl justify-center">{{ message }}</p>
             <audio id="video" controls></audio>
         </div>
-        <button class="btn btn-primary" id="finishButton">Send recording</button>
         <div class="flex flex-grow items-center justify-center">
             <button class="btn btn-circle btn-outline size-64" id="recordButton">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
@@ -49,10 +48,10 @@
     let audioStream = null;
 
     const recordButton = document.getElementById("recordButton");
-    recordButton.addEventListener("click", startRecording);
-
-    const finishButton = document.getElementById("finishButton");
-    finishButton.addEventListener("click", finish);
+    recordButton.addEventListener("touchstart", startRecording);
+    recordButton.addEventListener("touchend", finish);
+    document.addEventListener('keydown', event => event.code === 'Space' && startRecording());
+    document.addEventListener('keyup', event => event.code === 'Space' && finish())
 
     function startRecording() {
         let constraints = { audio: true, video: false };
@@ -64,8 +63,6 @@
             rec = new Recorder(input, { numChannels: 1 })
             rec.record()
             document.getElementById("status").innerHTML = "Broadcasting"
-        }).catch(function (err) {
-            recordButton.disabled = false;
         });
     }
 
