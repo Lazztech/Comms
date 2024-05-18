@@ -56,18 +56,17 @@
     function startRecording() {
         let constraints = { audio: true, video: false };
         recordButton.disabled = true;
+        document.getElementById("status").innerHTML = "Broadcasting";
         navigator.mediaDevices.getUserMedia(constraints).then(function (stream) {
             const audioContext = new window.AudioContext();
             audioStream = stream;
             const input = audioContext.createMediaStreamSource(stream);
             rec = new Recorder(input, { numChannels: 1 })
             rec.record()
-            document.getElementById("status").innerHTML = "Broadcasting"
         });
     }
 
     function finish() {
-        document.getElementById("status").innerHTML = "Converting audio to text..."
         recordButton.disabled = false;
         rec.stop();
         audioStream.getAudioTracks()[0].stop();
@@ -82,11 +81,9 @@
         fetch('http://localhost:3000/broadcast', {
             method: 'POST',
             body: formData
-        }).then(async result => {
-            document.getElementById("status").innerHTML = await result.text();
-        }).catch(error => {
-            document.getElementById("status").innerHTML = "An error occurred: " + error;
-        })
+        }).then(result => {
+            document.getElementById("status").innerHTML = "Idle";
+        });
     }
 
 </script>
