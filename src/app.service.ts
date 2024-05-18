@@ -1,11 +1,12 @@
 
 import { Injectable } from '@nestjs/common';
-import { spawn } from 'child_process';
+import { ChildProcessWithoutNullStreams, spawn } from 'child_process';
 const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
 
 @Injectable()
 export class AppService {
-  
+  ffmpegProcess: ChildProcessWithoutNullStreams;
+
   constructor() {
     this.start();
   }
@@ -17,25 +18,33 @@ export class AppService {
     console.log(ffmpegPath)
     const command = 'ffmpeg -f avfoundation -i ":1" -acodec libmp3lame -ab 32k -ac 1 -f rtp rtp://0.0.0.0:12345';
     const command2 = 'ffmpeg -f avfoundation -i ":1" -acodec aac -ab 32k -f hls -hls_time 10 -hls_list_size 6 -hls_flags delete_segments output.m3u8';
-    const child = spawn(ffmpegPath, [
-      '-f', 'avfoundation',
-      '-i', ':1',
-      '-acodec', 'aac',
-      '-ab', '32k',
+    this.ffmpegProcess = spawn(ffmpegPath, [
+      // '-f', 'avfoundation',
+      // '-i', ':1',
+      '-f', 'wav',
+      '-i', 'pipe:',
+      '-codec:a', 'aac',
+      '-b:a', '128k',
+      // '-ab', '32k',
       '-f', 'hls',
-      '-hls_time', '2', // Segment duration (in seconds)
-      '-hls_list_size', '1', // Number of HLS segments to keep in playlist
+      '-hls_time', '4', // Segment duration (in seconds)
+      '-hls_list_size', '3', // Number of HLS segments to keep in playlist
       '-hls_flags', 'delete_segments', // Automatically delete old segments
+      // '-filter_complex', 'amerge=inputs=2',
       'public/output.m3u8' // HLS playlist file name
     ]);
-    child.stdout.on('data', function (chunk) {
+    this.ffmpegProcess.stdout.on('data', function (chunk) {
       const textChunk = chunk.toString('utf8');
       console.log(textChunk);
     });
 
-    child.stderr.on('data', function (chunk) {
+    this.ffmpegProcess.stderr.on('data', function (chunk) {
       const textChunk = chunk.toString('utf8');
       console.error(textChunk);
     });
+  }
+
+  broadcast() {
+    this.ffmpegProcess.stdout
   }
 }

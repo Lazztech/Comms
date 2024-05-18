@@ -8,7 +8,7 @@ import { MulterModule } from '@nestjs/platform-express';
   imports: [
     ConfigModule.forRoot(),
     MulterModule.register({
-      dest: './data',
+      // dest: './data',
     })
   ],
   controllers: [AppController],

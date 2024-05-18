@@ -98,8 +98,8 @@ http://localhost:3000/output.m3u8
 Additionally FFMPEG may be instructed to keep a set number of HLS segments then auto delete the old segments. This reduces file storage concerns as it cleans up after itself.
 
 ### 3.2 - Brodcast Posted Audio
-
-...
+- https://stackoverflow.com/questions/14498539/how-to-overlay-downmix-two-audio-files-using-ffmpeg
+- https://stackoverflow.com/questions/45899585/pipe-input-in-to-ffmpeg-stdin
 
 ### 3.3 - Notifications
 

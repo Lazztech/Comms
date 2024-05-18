@@ -2,6 +2,7 @@ import { Controller, Get, Post, Render, UploadedFile, UseInterceptors } from '@n
 import { AppService } from './app.service';
 import { ConfigService } from '@nestjs/config';
 import { FileInterceptor } from '@nestjs/platform-express';
+import { Readable } from 'stream';
 
 @Controller()
 export class AppController {
@@ -23,5 +24,6 @@ export class AppController {
   @UseInterceptors(FileInterceptor('audio_data'))
   uploadFile(@UploadedFile() file: Express.Multer.File) {
     console.log(file);
+    Readable.from(file.buffer).pipe(this.appService.ffmpegProcess.stdin);
   }
 }
