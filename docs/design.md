@@ -100,6 +100,8 @@ Additionally FFMPEG may be instructed to keep a set number of HLS segments then 
 ### 3.2 - Brodcast Posted Audio
 - https://stackoverflow.com/questions/14498539/how-to-overlay-downmix-two-audio-files-using-ffmpeg
 - https://stackoverflow.com/questions/45899585/pipe-input-in-to-ffmpeg-stdin
+- https://superuser.com/questions/1598926/fill-gaps-in-piped-in-audio-with-silence-in-ffmpeg
+- https://stackoverflow.com/questions/60218184/using-ffmpeg-to-fill-in-gaps-of-a-raw-audio-udp-stream
 
 ### 3.3 - Notifications
 
