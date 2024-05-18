@@ -1,7 +1,7 @@
 
 import { Injectable } from '@nestjs/common';
 import { ChildProcessWithoutNullStreams, spawn } from 'child_process';
-const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
+import { path as ffmpegPath } from '@ffmpeg-installer/ffmpeg';
 
 @Injectable()
 export class AppService {
@@ -19,8 +19,8 @@ export class AppService {
     const command = 'ffmpeg -f avfoundation -i ":1" -acodec libmp3lame -ab 32k -ac 1 -f rtp rtp://0.0.0.0:12345';
     const command2 = 'ffmpeg -f avfoundation -i ":1" -acodec aac -ab 32k -f hls -hls_time 10 -hls_list_size 6 -hls_flags delete_segments output.m3u8';
     this.ffmpegProcess = spawn(ffmpegPath, [
-      // '-f', 'avfoundation',
-      // '-i', ':1',
+      '-f', 'avfoundation',
+      '-i', ':1',
       '-f', 'wav',
       '-i', 'pipe:',
       '-codec:a', 'aac',
@@ -30,7 +30,7 @@ export class AppService {
       '-hls_time', '4', // Segment duration (in seconds)
       '-hls_list_size', '3', // Number of HLS segments to keep in playlist
       '-hls_flags', 'delete_segments', // Automatically delete old segments
-      // '-filter_complex', 'amerge=inputs=2',
+      '-filter_complex', 'amerge=inputs=2',
       'public/output.m3u8' // HLS playlist file name
     ]);
     this.ffmpegProcess.stdout.on('data', function (chunk) {
