@@ -66,18 +66,15 @@
 
     let music = document.getElementById('music');
     let mediaButton = document.getElementById('mediaButton');
-    let state = 'paused';
 
     function toggle() {
-        if (state == 'paused') {
+        if (music.paused) {
             music.src = "/listen.mp3"
             music.play();
-            state = 'playing';
             mediaButton.innerHTML = pauseSvg;
         } else {
             music.pause()
             music.src = ""
-            state = 'paused';
             mediaButton.innerHTML = playSvg;
         }
     }
