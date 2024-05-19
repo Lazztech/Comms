@@ -102,6 +102,10 @@ Additionally FFMPEG may be instructed to keep a set number of HLS segments then 
 - https://stackoverflow.com/questions/45899585/pipe-input-in-to-ffmpeg-stdin
 - https://superuser.com/questions/1598926/fill-gaps-in-piped-in-audio-with-silence-in-ffmpeg
 - https://stackoverflow.com/questions/60218184/using-ffmpeg-to-fill-in-gaps-of-a-raw-audio-udp-stream
+- https://superuser.com/questions/1720688/how-to-keep-audio-silence-with-ffmpeg-command
+- https://stackoverflow.com/questions/64717758/merge-two-audio-tracks-into-one-track
+- https://stackoverflow.com/questions/20532089/merging-mixing-two-audio-streams-with-webaudio
+- https://www.npmjs.com/package/mic
 
 ### 3.3 - Notifications
 

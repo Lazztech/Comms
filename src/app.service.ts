@@ -2,6 +2,8 @@
 import { Injectable } from '@nestjs/common';
 import { ChildProcessWithoutNullStreams, spawn } from 'child_process';
 import { path as ffmpegPath } from '@ffmpeg-installer/ffmpeg';
+import * as mic from 'mic';
+import { Readable } from 'stream';
 
 @Injectable()
 export class AppService {
@@ -16,32 +18,61 @@ export class AppService {
 
   start() {
     console.log(ffmpegPath)
-    const command = 'ffmpeg -f avfoundation -i ":1" -acodec libmp3lame -ab 32k -ac 1 -f rtp rtp://0.0.0.0:12345';
-    const command2 = 'ffmpeg -f avfoundation -i ":1" -acodec aac -ab 32k -f hls -hls_time 10 -hls_list_size 6 -hls_flags delete_segments output.m3u8';
-    this.ffmpegProcess = spawn(ffmpegPath, [
-      '-f', 'avfoundation',
-      '-i', ':1',
-      '-f', 'wav',
-      '-i', 'pipe:',
-      '-codec:a', 'aac',
-      '-b:a', '128k',
-      // '-ab', '32k',
-      '-f', 'hls',
-      '-hls_time', '4', // Segment duration (in seconds)
-      '-hls_list_size', '3', // Number of HLS segments to keep in playlist
-      '-hls_flags', 'delete_segments', // Automatically delete old segments
-      '-filter_complex', 'amerge=inputs=2',
-      'public/output.m3u8' // HLS playlist file name
-    ]);
-    this.ffmpegProcess.stdout.on('data', function (chunk) {
-      const textChunk = chunk.toString('utf8');
-      console.log(textChunk);
+    const micStream = this.startMicStream();
+  }
+
+  startMicStream(): Readable {
+    const micInstance = mic({
+      rate: '16000',
+      channels: '1',
+      debug: true,
+      // exitOnSilence: 6
+    });
+    const micInputStream = micInstance.getAudioStream();
+
+    micInputStream.on('data', function (data) {
+      console.log("Recieved Input Stream: " + data.length);
     });
 
-    this.ffmpegProcess.stderr.on('data', function (chunk) {
-      const textChunk = chunk.toString('utf8');
-      console.error(textChunk);
+    micInputStream.on('error', function (err) {
+      console.log("Error in Input Stream: " + err);
     });
+
+    micInputStream.on('startComplete', function () {
+      console.log("Got SIGNAL startComplete");
+      setTimeout(function () {
+        micInstance.pause();
+      }, 5000);
+    });
+
+    micInputStream.on('stopComplete', function () {
+      console.log("Got SIGNAL stopComplete");
+    });
+
+    micInputStream.on('pauseComplete', function () {
+      console.log("Got SIGNAL pauseComplete");
+      setTimeout(function () {
+        micInstance.resume();
+      }, 5000);
+    });
+
+    micInputStream.on('resumeComplete', function () {
+      console.log("Got SIGNAL resumeComplete");
+      // setTimeout(function () {
+      //   micInstance.stop();
+      // }, 5000);
+    });
+
+    micInputStream.on('silence', function () {
+      console.log("Got SIGNAL silence");
+    });
+
+    micInputStream.on('processExitComplete', function () {
+      console.log("Got SIGNAL processExitComplete");
+    });
+
+    micInstance.start();
+    return micInputStream;
   }
 
   broadcast() {
