@@ -24,12 +24,21 @@ export class AppController {
 
   @Get('ffmpeg.mp3')
   ffmpeg(@Req() req: Request, @Res() res: Response): any {
-    // const wavWriter = new wav.Writer({
-    //   sampleRate: 16000,
-    //   channels: 4,
-    // });
-    // wavWriter.pipe(res);
-    // this.appService.micStream.pipe(wavWriter);
+    this.appService.ffmpegMicOutput.pipe(res);
+  }
+
+  @Post('broadcast')
+  @UseInterceptors(FileInterceptor('audio_data'))
+  uploadFile(@UploadedFile() file: Express.Multer.File) {
+    console.log(file);
+    // Readable.from(file.buffer).pipe(this.appService.ffmpegMicProcess.stdin);
+    Readable.from(file.buffer).pipe(this.appService.ffmpegBroadcastProcess.stdin);
+
+  }
+
+  @Get('broadcast.mp3')
+  broadcast(@Req() req: Request, @Res() res: Response): any {
+    this.appService.ffmpegBroadcastOutput.pipe(res);
   }
 
   @Get('listen.wav')
@@ -40,12 +49,5 @@ export class AppController {
     });
     wavWriter.pipe(res);
     this.appService.micStream.pipe(wavWriter);
-  }
-
-  @Post('broadcast')
-  @UseInterceptors(FileInterceptor('audio_data'))
-  uploadFile(@UploadedFile() file: Express.Multer.File) {
-    console.log(file);
-    Readable.from(file.buffer).pipe(this.appService.ffmpegProcess.stdin);
   }
 }

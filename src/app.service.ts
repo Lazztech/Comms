@@ -8,9 +8,13 @@ import * as wav from 'wav';
 
 @Injectable()
 export class AppService {
-  ffmpegProcess: ChildProcessWithoutNullStreams;
+  ffmpegMicProcess: ChildProcessWithoutNullStreams;
+  ffmpegMicOutput: Readable;
+
+  ffmpegBroadcastProcess: ChildProcessWithoutNullStreams;
+  ffmpegBroadcastOutput: Readable;
+
   micStream: Readable;
-  ffmpegOutput: Readable;
 
   constructor() {
     this.start();
@@ -22,20 +26,34 @@ export class AppService {
 
   start() {
     console.log(ffmpegPath)
-    this.micStream = this.startMicStream();
+    this.ffmpegMicOutput = this.startFfmpegMicProcess();
+    this.ffmpegBroadcastOutput = this.startFfmpegBroadcastProcess();
+    // this.micStream = this.startMicStream();
   }
 
-  startFfmpeg() {
-    // 'ffmpeg -use_wallclock_as_timestamps true -f wav -re -i pipe: -codec:a aac -b:a 128k -af aresample=async=1 -f mp3 -'
-    this.ffmpegProcess = spawn(ffmpegPath, [
-      '-f', 'wav',
-      '-i', 'pipe:', // stdin input source
-      '-codec:a', 'aac',
-      '-b:a', '128k',
+  startFfmpegMicProcess() {
+    // ffmpeg -use_wallclock_as_timestamps true -f wav -re -i pipe: -codec:a aac -b:a 128k -af aresample=async=1 -f mp3 -
+    // ffmpeg -use_wallclock_as_timestamps true -f avfoundation -i :1 -f wav -re -i pipe: -codec:a aac -b:a 128k -af aresample=async=1 -filter_complex amerge=inputs=2 -f mp3 -
+    this.ffmpegMicProcess = spawn(ffmpegPath, [
+      '-use_wallclock_as_timestamps', 'true',
+      '-re',
+      '-f', 'avfoundation', // mac os media devices
+      '-i', ':1', // mac os microphone input
       '-af', 'aresample=async=1',
       '-f', 'mp3',
       '-'
     ]);
+    return this.ffmpegMicProcess.stdout;
+  }
+
+  startFfmpegBroadcastProcess() {
+    this.ffmpegBroadcastProcess = spawn(ffmpegPath, [
+      '-f', 'wav', // mac os media devices
+      '-i', 'pipe:', // mac os microphone input
+      '-f', 'mp3',
+      '-'
+    ]);
+    return this.ffmpegBroadcastProcess.stdout;
   }
 
   startMicStream(): Readable {
