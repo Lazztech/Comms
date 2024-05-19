@@ -44,6 +44,9 @@ export class AppService {
   }
 
   startFfmpegBroadcastProcess() {
+    // ffmpeg -hide_banner -y -use_wallclock_as_timestamps true -f s16le -ar 48000 -ac 1 -i pipe:0 -af aresample=async=1 -ac 1 -
+    // ffmpeg -hide_banner -y -use_wallclock_as_timestamps true -f ogg -c copy -ar 48000 -ac 1 -i pipe:0 -af aresample=async=1 -ac 1 -
+    // ffmpeg -hide_banner -y -use_wallclock_as_timestamps true -f wav -c copy -ar 48000 -ac 1 -i pipe: -f mp3 -af aresample=async=1 -ac 1 -
     this.ffmpegBroadcastProcess = spawn(ffmpegPath, [
       '-f', 'wav', // mac os media devices
       '-i', 'pipe:', // mac os microphone input

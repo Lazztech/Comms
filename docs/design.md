@@ -108,6 +108,10 @@ Additionally FFMPEG may be instructed to keep a set number of HLS segments then 
 - https://www.npmjs.com/package/mic
 - https://github.com/ashishbajaj99/mic
 - https://github.com/TooTallNate/node-wav
+- https://www.reddit.com/r/ffmpeg/comments/14o0mn0/writing_raw_opus_into_ogg_file/
+- https://stackoverflow.com/questions/64145845/when-streaming-with-ffmpeg-insert-audio-only-if-the-source-file-stream-has-no-a
+- https://superuser.com/questions/1708271/ffmpeg-waits-to-close-the-pipe-in-order-to-start-processing-data
+- https://stackoverflow.com/questions/31284738/joining-the-two-audio-files-in-node-js
 
 ### 3.3 - Notifications
 
