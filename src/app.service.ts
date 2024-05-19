@@ -40,7 +40,7 @@ export class AppService {
 
   startMicStream(): Readable {
     const micInstance = mic({
-      rate: '16000',
+      rate: '9600',
       channels: '1',
       debug: true,
       fileType: 'wav'
