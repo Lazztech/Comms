@@ -1,7 +1,7 @@
 
 import { path as ffmpegPath } from '@ffmpeg-installer/ffmpeg';
 import { Injectable } from '@nestjs/common';
-import { ChildProcessWithoutNullStreams } from 'child_process';
+import { ChildProcessWithoutNullStreams, spawn } from 'child_process';
 import * as mic from 'mic';
 import { Readable } from 'stream';
 import * as wav from 'wav';
@@ -10,6 +10,7 @@ import * as wav from 'wav';
 export class AppService {
   ffmpegProcess: ChildProcessWithoutNullStreams;
   micStream: Readable;
+  ffmpegOutput: Readable;
 
   constructor() {
     this.start();
@@ -22,6 +23,19 @@ export class AppService {
   start() {
     console.log(ffmpegPath)
     this.micStream = this.startMicStream();
+  }
+
+  startFfmpeg() {
+    // 'ffmpeg -use_wallclock_as_timestamps true -f wav -re -i pipe: -codec:a aac -b:a 128k -af aresample=async=1 -f mp3 -'
+    this.ffmpegProcess = spawn(ffmpegPath, [
+      '-f', 'wav',
+      '-i', 'pipe:', // stdin input source
+      '-codec:a', 'aac',
+      '-b:a', '128k',
+      '-af', 'aresample=async=1',
+      '-f', 'mp3',
+      '-'
+    ]);
   }
 
   startMicStream(): Readable {
