@@ -3,6 +3,7 @@ import { AppService } from './app.service';
 import { ConfigService } from '@nestjs/config';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { Readable } from 'stream';
+import { Request, Response } from 'express';
 
 @Controller()
 export class AppController {
@@ -20,9 +21,9 @@ export class AppController {
     };
   }
 
-  @Get('listen.mp3')
-  listen(@Req() request: Request, @Res() response: Response): any {
-    
+  @Get('listen.wav')
+  listen(@Req() req: Request, @Res() res: Response): any {
+    this.appService.micStream.pipe(res);
   }
 
   @Post('broadcast')

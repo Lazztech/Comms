@@ -1,24 +1,26 @@
 
-import { Injectable } from '@nestjs/common';
-import { ChildProcessWithoutNullStreams, spawn } from 'child_process';
 import { path as ffmpegPath } from '@ffmpeg-installer/ffmpeg';
+import { Injectable } from '@nestjs/common';
+import { ChildProcessWithoutNullStreams } from 'child_process';
 import * as mic from 'mic';
 import { Readable } from 'stream';
 
 @Injectable()
 export class AppService {
   ffmpegProcess: ChildProcessWithoutNullStreams;
+  micStream: Readable;
 
   constructor() {
     this.start();
   }
+
   getHello(): string {
     return 'Hello World!';
   }
 
   start() {
     console.log(ffmpegPath)
-    const micStream = this.startMicStream();
+    this.micStream = this.startMicStream();
   }
 
   startMicStream(): Readable {
@@ -29,6 +31,7 @@ export class AppService {
       // exitOnSilence: 6
     });
     const micInputStream = micInstance.getAudioStream();
+    console.log(micInputStream)
 
     micInputStream.on('data', function (data) {
       console.log("Recieved Input Stream: " + data.length);
@@ -73,9 +76,5 @@ export class AppService {
 
     micInstance.start();
     return micInputStream;
-  }
-
-  broadcast() {
-    this.ffmpegProcess.stdout
   }
 }
