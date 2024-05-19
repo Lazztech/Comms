@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Render, UploadedFile, UseInterceptors } from '@nestjs/common';
+import { Controller, Get, Post, Render, Req, Res, UploadedFile, UseInterceptors } from '@nestjs/common';
 import { AppService } from './app.service';
 import { ConfigService } from '@nestjs/config';
 import { FileInterceptor } from '@nestjs/platform-express';
@@ -18,6 +18,11 @@ export class AppController {
       isProd: this.configService.get('NODE_ENV') == 'prod',
       message: 'Idle'
     };
+  }
+
+  @Get('listen.mp3')
+  listen(@Req() request: Request, @Res() response: Response): any {
+    
   }
 
   @Post('broadcast')
