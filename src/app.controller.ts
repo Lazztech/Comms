@@ -4,6 +4,7 @@ import { ConfigService } from '@nestjs/config';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { Readable } from 'stream';
 import { Request, Response } from 'express';
+import * as wav from 'wav';
 
 @Controller()
 export class AppController {
@@ -23,7 +24,12 @@ export class AppController {
 
   @Get('listen.wav')
   listen(@Req() req: Request, @Res() res: Response): any {
-    this.appService.micStream.pipe(res);
+    const wavWriter = new wav.Writer({
+      sampleRate: 16000,
+      channels: 1
+    });
+    wavWriter.pipe(res);
+    this.appService.micStream.pipe(wavWriter);
   }
 
   @Post('broadcast')

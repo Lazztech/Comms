@@ -4,6 +4,7 @@ import { Injectable } from '@nestjs/common';
 import { ChildProcessWithoutNullStreams } from 'child_process';
 import * as mic from 'mic';
 import { Readable } from 'stream';
+import * as wav from 'wav';
 
 @Injectable()
 export class AppService {
@@ -32,7 +33,7 @@ export class AppService {
       // exitOnSilence: 6
     });
     const micInputStream = micInstance.getAudioStream();
-    console.log(micInputStream)
+    console.log(micInputStream);
 
     micInputStream.on('data', function (data) {
       console.log("Recieved Input Stream: " + data.length);
