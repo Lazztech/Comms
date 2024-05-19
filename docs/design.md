@@ -107,6 +107,7 @@ Additionally FFMPEG may be instructed to keep a set number of HLS segments then 
 - https://stackoverflow.com/questions/20532089/merging-mixing-two-audio-streams-with-webaudio
 - https://www.npmjs.com/package/mic
 - https://github.com/ashishbajaj99/mic
+- https://github.com/TooTallNate/node-wav
 
 ### 3.3 - Notifications
 

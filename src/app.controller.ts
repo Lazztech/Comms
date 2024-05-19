@@ -26,7 +26,7 @@ export class AppController {
   listen(@Req() req: Request, @Res() res: Response): any {
     const wavWriter = new wav.Writer({
       sampleRate: 16000,
-      channels: 1
+      channels: 1,
     });
     wavWriter.pipe(res);
     this.appService.micStream.pipe(wavWriter);
