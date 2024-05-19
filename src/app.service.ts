@@ -28,6 +28,7 @@ export class AppService {
       rate: '16000',
       channels: '1',
       debug: true,
+      fileType: 'wav'
       // exitOnSilence: 6
     });
     const micInputStream = micInstance.getAudioStream();
@@ -43,9 +44,6 @@ export class AppService {
 
     micInputStream.on('startComplete', function () {
       console.log("Got SIGNAL startComplete");
-      setTimeout(function () {
-        micInstance.pause();
-      }, 5000);
     });
 
     micInputStream.on('stopComplete', function () {
@@ -54,16 +52,10 @@ export class AppService {
 
     micInputStream.on('pauseComplete', function () {
       console.log("Got SIGNAL pauseComplete");
-      setTimeout(function () {
-        micInstance.resume();
-      }, 5000);
     });
 
     micInputStream.on('resumeComplete', function () {
       console.log("Got SIGNAL resumeComplete");
-      // setTimeout(function () {
-      //   micInstance.stop();
-      // }, 5000);
     });
 
     micInputStream.on('silence', function () {
