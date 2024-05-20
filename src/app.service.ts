@@ -25,13 +25,14 @@ export class AppService {
     console.log(ffmpegPath)
     this.ffmpegMicOutput = this.startFfmpegMicProcess();
     this.ffmpegMicOutput.on('data', (chunk) => {
-      if (this.broadcastQueue.length) {
-        // could merge buffers here
-        console.log('dequeue broadcast buffer');
-        this.stream.push(this.broadcastQueue.shift());
-      } else {
-        this.stream.push(chunk);
-      }
+      // if (this.broadcastQueue.length) {
+      //   // could merge buffers here
+      //   console.log('dequeue broadcast buffer');
+      //   this.stream.push(this.broadcastQueue.shift());
+      // } else {
+      //   this.stream.push(chunk);
+      // }
+      this.stream.push(chunk);
     });
   }
 
