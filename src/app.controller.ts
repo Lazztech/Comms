@@ -24,7 +24,7 @@ export class AppController {
 
   @Get('ffmpeg.mp3')
   ffmpeg(@Req() req: Request, @Res() res: Response): any {
-    this.appService.ffmpegMicOutput.pipe(res);
+    this.appService.stream.pipe(res);
   }
 
   @Post('broadcast')
