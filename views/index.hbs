@@ -29,6 +29,7 @@
             </svg>
             <p id="status" class="text-xl justify-center">{{ message }}</p>
             <audio id="music"></audio>
+            <audio id="broadcast"></audio>
             <button class="btn" onclick="toggle()" id="mediaButton">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-6 h-6" id="playIcon">
@@ -65,14 +66,19 @@
     `;
 
     let music = document.getElementById('music');
+    let broadcast = document.getElementById('broadcast');
     let mediaButton = document.getElementById('mediaButton');
 
     function toggle() {
         if (music.paused) {
+            broadcast.src = '/broadcast.mp3';
+            broadcast.play();
             music.src = "/ffmpeg.mp3"
             music.play();
             mediaButton.innerHTML = pauseSvg;
         } else {
+            broadcast.pause();
+            broadcast.src = '';
             music.pause()
             music.src = ""
             mediaButton.innerHTML = playSvg;

@@ -15,7 +15,7 @@ export class AppService {
   ffmpegBroadcastProcess: ChildProcessWithoutNullStreams;
   ffmpegBroadcastOutput: Readable;
 
-  stream: MemoryStream;
+  // stream: MemoryStream;
 
   micStream: Readable;
 
@@ -32,9 +32,9 @@ export class AppService {
     this.ffmpegMicOutput = this.startFfmpegMicProcess();
     this.ffmpegBroadcastOutput = this.startFfmpegBroadcastProcess();
     // this.micStream = this.startMicStream();
-    this.stream = new MemoryStream();
-    this.ffmpegMicOutput.pipe(this.stream);
-    this.ffmpegBroadcastOutput.pipe(this.stream);
+    // this.stream = new MemoryStream();
+    // this.ffmpegMicOutput.pipe(this.stream);
+    // this.ffmpegBroadcastOutput.pipe(this.stream);
   }
 
   startFfmpegMicProcess() {
