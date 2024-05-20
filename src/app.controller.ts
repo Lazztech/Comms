@@ -30,10 +30,7 @@ export class AppController {
   @Post('broadcast')
   @UseInterceptors(FileInterceptor('audio_data'))
   uploadFile(@UploadedFile() file: Express.Multer.File) {
-    console.log(file);
-    // Readable.from(file.buffer).pipe(this.appService.ffmpegMicProcess.stdin);
-    Readable.from(file.buffer).pipe(this.appService.ffmpegBroadcastProcess.stdin);
-
+    this.appService.broadcast(file.buffer);
   }
 
   @Get('broadcast.mp3')

@@ -37,6 +37,12 @@ export class AppService {
     // this.ffmpegBroadcastOutput.pipe(this.stream);
   }
 
+  broadcast(buffer: Buffer) {
+    console.log(buffer);
+    Readable.from(buffer);
+    this.ffmpegMicOutput.push(buffer);
+  }
+
   startFfmpegMicProcess() {
     // ffmpeg -use_wallclock_as_timestamps true -f wav -re -i pipe: -codec:a aac -b:a 128k -af aresample=async=1 -f mp3 -
     // ffmpeg -use_wallclock_as_timestamps true -f avfoundation -i :1 -f wav -re -i pipe: -codec:a aac -b:a 128k -af aresample=async=1 -filter_complex amerge=inputs=2 -f mp3 -
