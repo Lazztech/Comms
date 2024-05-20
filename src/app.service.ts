@@ -44,12 +44,12 @@ export class AppService {
   }
 
   startFfmpegMicProcess() {
-    // ffmpeg -use_wallclock_as_timestamps true -f wav -re -i pipe: -codec:a aac -b:a 128k -af aresample=async=1 -f mp3 -
-    // ffmpeg -use_wallclock_as_timestamps true -f avfoundation -i :1 -f wav -re -i pipe: -codec:a aac -b:a 128k -af aresample=async=1 -filter_complex amerge=inputs=2 -f mp3 -
+    // ffmpeg -use_wallclock_as_timestamps true -f wav -re -i pipe: -codec:a aac -b:a 128k -af aresample=async=1 -f wav -
+    // ffmpeg -use_wallclock_as_timestamps true -f avfoundation -i :1 -f wav -re -i pipe: -codec:a aac -b:a 128k -af aresample=async=1 -filter_complex amerge=inputs=2 -f wav -
     this.ffmpegMicProcess = spawn(ffmpegPath, [
       '-f', 'avfoundation', // mac os media devices
       '-i', ':1', // mac os microphone input
-      '-f', 'mp3',
+      '-f', 'wav',
       '-'
     ]);
     return this.ffmpegMicProcess.stdout;
@@ -58,11 +58,11 @@ export class AppService {
   startFfmpegBroadcastProcess() {
     // ffmpeg -hide_banner -y -use_wallclock_as_timestamps true -f s16le -ar 48000 -ac 1 -i pipe:0 -af aresample=async=1 -ac 1 -
     // ffmpeg -hide_banner -y -use_wallclock_as_timestamps true -f ogg -c copy -ar 48000 -ac 1 -i pipe:0 -af aresample=async=1 -ac 1 -
-    // ffmpeg -hide_banner -y -use_wallclock_as_timestamps true -f wav -c copy -ar 48000 -ac 1 -i pipe: -f mp3 -af aresample=async=1 -ac 1 -
+    // ffmpeg -hide_banner -y -use_wallclock_as_timestamps true -f wav -c copy -ar 48000 -ac 1 -i pipe: -f wav -af aresample=async=1 -ac 1 -
     this.ffmpegBroadcastProcess = spawn(ffmpegPath, [
       '-f', 'wav', // mac os media devices
       '-i', 'pipe:', // mac os microphone input
-      '-f', 'mp3',
+      '-f', 'wav',
       '-'
     ]);
     return this.ffmpegBroadcastProcess.stdout;

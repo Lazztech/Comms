@@ -5,6 +5,7 @@ import { FileInterceptor } from '@nestjs/platform-express';
 import { Readable } from 'stream';
 import { Request, Response } from 'express';
 import * as wav from 'wav';
+import { createWriteStream } from 'fs';
 
 @Controller()
 export class AppController {
@@ -22,7 +23,7 @@ export class AppController {
     };
   }
 
-  @Get('ffmpeg.mp3')
+  @Get('ffmpeg.wav')
   ffmpeg(@Req() req: Request, @Res() res: Response): any {
     this.appService.ffmpegMicOutput.pipe(res);
   }
@@ -30,10 +31,11 @@ export class AppController {
   @Post('broadcast')
   @UseInterceptors(FileInterceptor('audio_data'))
   uploadFile(@UploadedFile() file: Express.Multer.File) {
+    Readable.from(file.buffer).pipe(createWriteStream('test.wav'))
     this.appService.broadcast(file.buffer);
   }
 
-  @Get('broadcast.mp3')
+  @Get('broadcast.wav')
   broadcast(@Req() req: Request, @Res() res: Response): any {
     this.appService.ffmpegBroadcastOutput.pipe(res);
   }

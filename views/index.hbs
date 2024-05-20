@@ -71,9 +71,9 @@
 
     function toggle() {
         if (music.paused) {
-            broadcast.src = '/broadcast.mp3';
+            broadcast.src = '/broadcast.wav';
             broadcast.play();
-            music.src = "/ffmpeg.mp3"
+            music.src = "/ffmpeg.wav"
             music.play();
             mediaButton.innerHTML = pauseSvg;
         } else {
