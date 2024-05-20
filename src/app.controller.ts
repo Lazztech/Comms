@@ -30,7 +30,7 @@ export class AppController {
   @Post('broadcast')
   @UseInterceptors(FileInterceptor('audio_data'))
   uploadFile(@UploadedFile() file: Express.Multer.File) {
-    Readable.from(file.buffer).pipe(createWriteStream('test.wav'))
+    // Readable.from(file.buffer).pipe(createWriteStream('test.wav'))
     this.appService.broadcast(file.buffer);
   }
 }

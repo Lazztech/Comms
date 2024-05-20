@@ -10,6 +10,7 @@ export class AppService {
   ffmpegMicProcess: ChildProcessWithoutNullStreams;
   ffmpegMicOutput: Readable;
 
+  broadcastQueue: Array<Buffer> = [];
   stream: MemoryStream = new MemoryStream();
 
   constructor() {
@@ -24,14 +25,20 @@ export class AppService {
     console.log(ffmpegPath)
     this.ffmpegMicOutput = this.startFfmpegMicProcess();
     this.ffmpegMicOutput.on('data', (chunk) => {
-      this.stream.push(chunk)
+      if (this.broadcastQueue.length) {
+        // could merge buffers here
+        console.log('dequeue broadcast buffer');
+        this.stream.push(this.broadcastQueue.shift());
+      } else {
+        this.stream.push(chunk);
+      }
     });
   }
 
   broadcast(buffer: Buffer) {
     console.log(buffer);
     Readable.from(buffer);
-    this.stream.push(buffer);
+    this.broadcastQueue.push(buffer);
   }
 
   startFfmpegMicProcess() {
