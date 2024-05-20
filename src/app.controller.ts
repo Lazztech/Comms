@@ -1,11 +1,10 @@
 import { Controller, Get, Post, Render, Req, Res, UploadedFile, UseInterceptors } from '@nestjs/common';
-import { AppService } from './app.service';
 import { ConfigService } from '@nestjs/config';
 import { FileInterceptor } from '@nestjs/platform-express';
-import { Readable } from 'stream';
 import { Request, Response } from 'express';
-import * as wav from 'wav';
 import { createWriteStream } from 'fs';
+import { Readable } from 'stream';
+import { AppService } from './app.service';
 
 @Controller()
 export class AppController {
@@ -23,9 +22,9 @@ export class AppController {
     };
   }
 
-  @Get('ffmpeg.wav')
+  @Get('stream.wav')
   ffmpeg(@Req() req: Request, @Res() res: Response): any {
-    this.appService.ffmpegMicOutput.pipe(res);
+    this.appService.stream.pipe(res);
   }
 
   @Post('broadcast')
@@ -33,20 +32,5 @@ export class AppController {
   uploadFile(@UploadedFile() file: Express.Multer.File) {
     Readable.from(file.buffer).pipe(createWriteStream('test.wav'))
     this.appService.broadcast(file.buffer);
-  }
-
-  @Get('broadcast.wav')
-  broadcast(@Req() req: Request, @Res() res: Response): any {
-    this.appService.ffmpegBroadcastOutput.pipe(res);
-  }
-
-  @Get('listen.wav')
-  listen(@Req() req: Request, @Res() res: Response): any {
-    const wavWriter = new wav.Writer({
-      sampleRate: 9600,
-      channels: 1,
-    });
-    wavWriter.pipe(res);
-    this.appService.micStream.pipe(wavWriter);
   }
 }
