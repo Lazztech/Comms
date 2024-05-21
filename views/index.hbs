@@ -37,7 +37,6 @@
                 </svg>
             </button>
         </div>
-        <video id="video" controls></video>
         <button class="btn" id="finishButton">Send recording</button>
         <div class="flex flex-grow items-center justify-center">
             <button class="btn btn-circle btn-outline size-64" id="recordButton">
@@ -50,6 +49,7 @@
         </div>
     </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
 <script>
     const playSvg = `                
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -67,40 +67,25 @@
 
     let stream = document.getElementById('stream');
     let mediaButton = document.getElementById('mediaButton');
+    let streamSrc = '/output.m3u8';
+    let hls; 
+    if (Hls.isSupported()) {
+        hls = hls || new Hls();
+        hls.loadSource(streamSrc);
+        hls.attachMedia(stream);
+    } else if (stream.canPlayType('application/vnd.apple.mpegurl')) {
+        stream.src = streamSrc;
+    }
 
     function toggle() {
         if (stream.paused) {
-            stream.src = "/stream.wav"
             stream.play();
             mediaButton.innerHTML = pauseSvg;
         } else {
             stream.pause()
-            stream.src = ""
             mediaButton.innerHTML = playSvg;
         }
     }
-</script>
-<script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
-<!-- Or if you want the latest version from the main branch -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script> -->
-<script>
-  var video = document.getElementById('video');
-  var videoSrc = '/output.m3u8';
-  if (Hls.isSupported()) {
-    var hls = new Hls();
-    hls.loadSource(videoSrc);
-    hls.attachMedia(video);
-  }
-  // HLS.js is not supported on platforms that do not have Media Source
-  // Extensions (MSE) enabled.
-  //
-  // When the browser has built-in HLS support (check using `canPlayType`),
-  // we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video
-  // element through the `src` property. This is using the built-in support
-  // of the plain video element, without using HLS.js.
-  else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-    video.src = videoSrc;
-  }
 </script>
 <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
 <script>
