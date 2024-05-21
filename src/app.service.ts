@@ -35,7 +35,7 @@ export class AppService {
     this.stream.on('finish', () => console.log('stream finish'));
     this.stream.on('pause', () => console.log('stream pause'));
     this.stream.on('pipe', () => console.log('stream pipe'));
-    this.stream.on('readable', () => console.log('stream readable'));
+    // this.stream.on('readable', () => console.log('stream readable')); 
     this.stream.on('resume', () => console.log('stream resume'));
     this.stream.on('unpipe', () => console.log('stream unpipe'));
   }
