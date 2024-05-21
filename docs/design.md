@@ -113,6 +113,7 @@ Additionally FFMPEG may be instructed to keep a set number of HLS segments then 
 - https://superuser.com/questions/1708271/ffmpeg-waits-to-close-the-pipe-in-order-to-start-processing-data
 - https://stackoverflow.com/questions/31284738/joining-the-two-audio-files-in-node-js
 - https://stackoverflow.com/questions/60750703/why-can-i-sometimes-concatenate-audio-data-using-nodejs-buffers-and-sometimes-i
+- https://github.com/JasonGhent/stream-handbook-epub
 
 ### 3.3 - Notifications
 
