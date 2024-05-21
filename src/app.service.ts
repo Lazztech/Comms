@@ -50,10 +50,10 @@ export class AppService {
     const x = spawn(ffmpegPath, [
       '-i', 'pipe:',
       '-codec:a', 'aac',
-      '-ab', '32k',
+      '-ab', '96k',
       '-f', 'hls',
-      '-hls_time', '2', // Segment duration (in seconds)
-      '-hls_list_size', '2', // Number of HLS segments to keep in playlist
+      '-hls_time', '3', // Segment duration (in seconds)
+      '-hls_list_size', '3', // Number of HLS segments to keep in playlist
       '-hls_flags', 'delete_segments', // Automatically delete old segments
       'public/output.m3u8' // HLS playlist file name
     ]);
