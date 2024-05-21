@@ -38,10 +38,26 @@ export class AppService {
     // this.stream.on('readable', () => console.log('stream readable')); 
     this.stream.on('resume', () => console.log('stream resume'));
     this.stream.on('unpipe', () => console.log('stream unpipe'));
+
+    this.startHlsOutput();
   }
 
   broadcast(buffer: Buffer) {
     this.stream.push(buffer);
+  }
+
+  startHlsOutput() {
+    const x = spawn(ffmpegPath, [
+      '-i', 'pipe:',
+      '-codec:a', 'aac',
+      '-ab', '32k',
+      '-f', 'hls',
+      '-hls_time', '3', // Segment duration (in seconds)
+      '-hls_list_size', '3', // Number of HLS segments to keep in playlist
+      '-hls_flags', 'delete_segments', // Automatically delete old segments
+      'public/output.m3u8' // HLS playlist file name
+    ]);
+    this.stream.pipe(x.stdin);
   }
 
   startFfmpegMicProcess() {
