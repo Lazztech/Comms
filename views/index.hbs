@@ -94,10 +94,11 @@
     let audioStream = null;
 
     const recordButton = document.getElementById("recordButton");
-
     function startRecording() {
+        navigator.audioSession.type = 'play-and-record';
         recordButton.disabled = true;
         navigator.mediaDevices.getUserMedia({ audio: true, video: false }).then(function (stream) {
+            console.log(navigator.audioSession.type);
             const audioContext = new window.AudioContext();
             audioStream = stream;
             const input = audioContext.createMediaStreamSource(stream);
@@ -106,10 +107,12 @@
             document.getElementById("status").innerHTML = "Broadcasting"
         }).catch(function (err) {
             recordButton.disabled = false;
+            navigator.audioSession.type = 'playback';
         });
     }
 
     function finish() {
+        navigator.audioSession.type = 'playback';
         console.log('finish', rec, audioStream)
         document.getElementById("status").innerHTML = "Uploading..."
         recordButton.disabled = false;

@@ -114,6 +114,7 @@ Additionally FFMPEG may be instructed to keep a set number of HLS segments then 
 - https://stackoverflow.com/questions/31284738/joining-the-two-audio-files-in-node-js
 - https://stackoverflow.com/questions/60750703/why-can-i-sometimes-concatenate-audio-data-using-nodejs-buffers-and-sometimes-i
 - https://github.com/JasonGhent/stream-handbook-epub
+- https://stackoverflow.com/questions/76083738/ios-safari-lowers-audio-playback-volume-when-mic-is-in-use
 
 ### 3.3 - Notifications
 
