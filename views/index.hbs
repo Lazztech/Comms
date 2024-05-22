@@ -109,11 +109,12 @@
     }
 
     function finish() {
+        console.log('finish', rec, audioStream)
         document.getElementById("status").innerHTML = "Uploading..."
         recordButton.disabled = false;
-        rec.stop();
-        audioStream.getAudioTracks()[0].stop();
-        rec.exportWAV(uploadSoundData);
+        rec?.stop();
+        audioStream?.getAudioTracks()[0].stop();
+        rec?.exportWAV(uploadSoundData);
     }
 
     function uploadSoundData(blob) {
