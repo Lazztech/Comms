@@ -37,9 +37,8 @@
                 </svg>
             </button>
         </div>
-        <button class="btn" id="finishButton">Send recording</button>
-        <div class="flex flex-grow items-center justify-center">
-            <button class="btn btn-circle btn-outline size-64 border-orange-500 active:bg-red-500" id="recordButton">
+        <div class="flex flex-grow items-center justify-center" onmousedown="startRecording()" onmouseup="finish()">
+            <button class="btn btn-circle btn-outline size-64 border-orange-500 active:bg-red-500" id="recordButton" >
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
                     stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -93,10 +92,6 @@
     let audioStream = null;
 
     const recordButton = document.getElementById("recordButton");
-    recordButton.addEventListener("click", startRecording);
-
-    const finishButton = document.getElementById("finishButton");
-    finishButton.addEventListener("click", finish);
 
     function startRecording() {
         let constraints = { audio: true, video: false };
