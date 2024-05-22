@@ -37,8 +37,10 @@
                 </svg>
             </button>
         </div>
-        <div class="flex flex-grow items-center justify-center" onmousedown="startRecording()" onmouseup="finish()">
-            <button class="btn btn-circle btn-outline size-64 border-orange-500 active:bg-red-500" id="recordButton" >
+
+        <div class="flex flex-grow items-center justify-center">
+            <button class="btn" onclick="finish()">Stop</button>
+            <button class="btn btn-circle btn-outline size-64 border-orange-500 active:bg-red-500" id="recordButton" onclick="startRecording()">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
                     stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round"
