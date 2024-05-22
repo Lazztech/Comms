@@ -109,7 +109,7 @@
     }
 
     function finish() {
-        document.getElementById("status").innerHTML = "Converting audio to text..."
+        document.getElementById("status").innerHTML = "Uploading..."
         recordButton.disabled = false;
         rec.stop();
         audioStream.getAudioTracks()[0].stop();
@@ -125,7 +125,7 @@
             method: 'POST',
             body: formData
         }).then(async result => {
-            document.getElementById("status").innerHTML = await result.text();
+            document.getElementById("status").innerHTML = "Idle";
         }).catch(error => {
             document.getElementById("status").innerHTML = "An error occurred: " + error;
         })
