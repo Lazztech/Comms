@@ -94,9 +94,8 @@
     const recordButton = document.getElementById("recordButton");
 
     function startRecording() {
-        let constraints = { audio: true, video: false };
         recordButton.disabled = true;
-        navigator.mediaDevices.getUserMedia(constraints).then(function (stream) {
+        navigator.mediaDevices.getUserMedia({ audio: true, video: false }).then(function (stream) {
             const audioContext = new window.AudioContext();
             audioStream = stream;
             const input = audioContext.createMediaStreamSource(stream);
@@ -112,9 +111,9 @@
         console.log('finish', rec, audioStream)
         document.getElementById("status").innerHTML = "Uploading..."
         recordButton.disabled = false;
-        rec?.stop();
-        audioStream?.getAudioTracks()[0].stop();
-        rec?.exportWAV(uploadSoundData);
+        rec.stop();
+        audioStream.getAudioTracks()[0].stop();
+        rec.exportWAV(uploadSoundData);
     }
 
     function uploadSoundData(blob) {
