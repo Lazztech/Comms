@@ -92,6 +92,7 @@
 
     const recordButton = document.getElementById("recordButton");
     function startRecording() {
+        // https://w3c.github.io/audio-session/#audio-session
         navigator.audioSession.type = 'play-and-record';
         recordButton.disabled = true;
         navigator.mediaDevices.getUserMedia({ audio: true, video: false }).then(function (stream) {
@@ -109,6 +110,7 @@
     }
 
     function finish() {
+        // https://w3c.github.io/audio-session/#audio-session
         navigator.audioSession.type = 'playback';
         console.log('finish', rec, audioStream)
         document.getElementById("status").innerHTML = "Uploading..."
