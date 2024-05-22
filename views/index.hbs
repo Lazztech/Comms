@@ -67,6 +67,9 @@
     `;
 
     let stream = document.getElementById('stream');
+    stream.addEventListener('play', () => mediaButton.innerHTML = pauseSvg);
+    stream.addEventListener('pause', () => mediaButton.innerHTML = playSvg);
+
     let mediaButton = document.getElementById('mediaButton');
     let streamSrc = '/output.m3u8';
     let hls; 
@@ -79,13 +82,7 @@
     }
 
     function toggle() {
-        if (stream.paused) {
-            stream.play();
-            mediaButton.innerHTML = pauseSvg;
-        } else {
-            stream.pause()
-            mediaButton.innerHTML = playSvg;
-        }
+        stream.paused ? stream.play() : stream.pause();
     }
 </script>
 <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
