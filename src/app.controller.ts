@@ -2,8 +2,6 @@ import { Controller, Get, Header, Post, Render, Req, Res, UploadedFile, UseInter
 import { ConfigService } from '@nestjs/config';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { Request, Response } from 'express';
-import { createWriteStream } from 'fs';
-import { Readable } from 'stream';
 import { AppService } from './app.service';
 
 @Controller()
@@ -23,6 +21,7 @@ export class AppController {
   }
 
   @Get('stream.mp3')
+  @Header('Cache-Control', 'no-store, no-cache, private')
   @Header('Content-Type', 'audio/mpeg')
   ffmpeg(@Req() req: Request, @Res() res: Response): any {
     res.setHeader('transfer-encoding', 'chunked');
