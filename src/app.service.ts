@@ -83,6 +83,9 @@ export class AppService {
       '-f', 'wav',
       '-'
     ]);
+    this.ffmpegMicProcess.stderr.on('data', (err) => {
+      console.error(err.toString());
+    });
     return this.ffmpegMicProcess.stdout;
   }
 }
