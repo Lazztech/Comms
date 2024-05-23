@@ -117,6 +117,8 @@ Additionally FFMPEG may be instructed to keep a set number of HLS segments then 
 - https://stackoverflow.com/questions/76083738/ios-safari-lowers-audio-playback-volume-when-mic-is-in-use
 - https://stackoverflow.com/questions/66691504/audio-clicks-cracklings-with-ffmpeg-audio-recording-on-mac-os
 - https://superuser.com/questions/1601224/ffmpeg-with-blackhole-audio-crackling-noises-why
+- https://nodejs.org/en/learn/modules/backpressuring-in-streams
+
 ### 3.3 - Notifications
 
 - https://docs.nestjs.com/techniques/server-sent-events
