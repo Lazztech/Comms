@@ -79,7 +79,7 @@ export class AppService {
     this.ffmpegMicProcess = spawn(ffmpegPath, [
       '-hide_banner',
       '-f', 'avfoundation', // mac os media devices
-      '-i', ':1', // mac os microphone input
+      '-i', ':0', // mac os microphone input
       '-f', 'wav',
       '-'
     ]);

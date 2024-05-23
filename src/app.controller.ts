@@ -27,6 +27,7 @@ export class AppController {
     res.setHeader('transfer-encoding', 'chunked');
     this.appService.mp3ReadableSteam.on('data', (chunk) => {
       res.write(chunk);
+      res.flushHeaders();
     });
     // setTimeout(() => res.end(), 3000)
   }
