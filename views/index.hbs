@@ -90,13 +90,23 @@
     let rec = null;
     let audioStream = null;
 
+    function setPlayAndRecord() {
+        // https://w3c.github.io/audio-session/#audio-session
+        if (navigator?.audioSession?.type)
+            navigator.audioSession.type = 'play-and-record';
+    }
+
+    function setPlayback() {
+        // https://w3c.github.io/audio-session/#audio-session
+        if (navigator?.audioSession?.type)
+            navigator.audioSession.type = 'playback';
+    }
+
     const recordButton = document.getElementById("recordButton");
     function startRecording() {
-        // https://w3c.github.io/audio-session/#audio-session
-        navigator.audioSession.type = 'play-and-record';
+        setPlayAndRecord();
         recordButton.disabled = true;
         navigator.mediaDevices.getUserMedia({ audio: true, video: false }).then(function (stream) {
-            console.log(navigator.audioSession.type);
             const audioContext = new window.AudioContext();
             audioStream = stream;
             const input = audioContext.createMediaStreamSource(stream);
@@ -105,13 +115,13 @@
             document.getElementById("status").innerHTML = "Broadcasting"
         }).catch(function (err) {
             recordButton.disabled = false;
-            navigator.audioSession.type = 'playback';
+            setPlayback();
         });
     }
 
     function finish() {
         // https://w3c.github.io/audio-session/#audio-session
-        navigator.audioSession.type = 'playback';
+        setPlayback();
         console.log('finish', rec, audioStream)
         document.getElementById("status").innerHTML = "Uploading..."
         recordButton.disabled = false;
