@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Render, Req, Res, UploadedFile, UseInterceptors } from '@nestjs/common';
+import { Controller, Get, Header, Post, Render, Req, Res, UploadedFile, UseInterceptors } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { Request, Response } from 'express';
@@ -22,9 +22,14 @@ export class AppController {
     };
   }
 
-  @Get('stream.wav')
+  @Get('stream.mp3')
+  @Header('Content-Type', 'audio/mpeg')
   ffmpeg(@Req() req: Request, @Res() res: Response): any {
-    this.appService.stream.pipe(res);
+    res.setHeader('transfer-encoding', 'chunked');
+    this.appService.mp3ReadableSteam.on('data', (chunk) => {
+      res.write(chunk);
+    });
+    // setTimeout(() => res.end(), 3000)
   }
 
   @Post('broadcast')

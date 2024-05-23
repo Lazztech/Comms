@@ -10,8 +10,9 @@ export class AppService {
   ffmpegMicProcess: ChildProcessWithoutNullStreams;
   ffmpegMicOutput: Readable;
 
-  broadcastQueue: Array<Buffer> = [];
   stream: MemoryStream = new MemoryStream();
+
+  mp3ReadableSteam: Readable;
 
   constructor() {
     this.start();
@@ -24,26 +25,38 @@ export class AppService {
   start() {
     console.log(ffmpegPath)
     this.ffmpegMicOutput = this.startFfmpegMicProcess();
-    this.ffmpegMicOutput.on('data', (chunk) => {
-      this.stream.push(chunk);
-    });
+    this.ffmpegMicOutput.pipe(this.stream);
     this.stream.on('data', (chunk) => console.log('stream on data', chunk.length));
     this.stream.on('close', () => console.log('stream close'));
     this.stream.on('end', () => console.log('stream end'));
     this.stream.on('drain', () => console.log('stream drain'));
     this.stream.on('error', (err) => console.error('stream err', err));
     this.stream.on('finish', () => console.log('stream finish'));
-    this.stream.on('pause', () => console.log('stream pause'));
+    this.stream.on('pause', () => { 
+      console.log('stream pause');
+      // this.stream.resume();
+    });
     this.stream.on('pipe', () => console.log('stream pipe'));
     // this.stream.on('readable', () => console.log('stream readable')); 
     this.stream.on('resume', () => console.log('stream resume'));
     this.stream.on('unpipe', () => console.log('stream unpipe'));
 
-    this.startHlsOutput();
+    // this.startHlsOutput();
+    this.mp3ReadableSteam = this.startMp3Output();
   }
 
   broadcast(buffer: Buffer) {
     this.stream.push(buffer);
+  }
+
+  startMp3Output() {
+    const x = spawn(ffmpegPath, [
+      '-i', 'pipe:',
+      '-f', 'mp3',
+      '-'
+    ]);
+    this.stream.pipe(x.stdin);
+    return x.stdout;
   }
 
   startHlsOutput() {

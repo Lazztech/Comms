@@ -29,6 +29,7 @@
             </svg>
             <p id="status" class="text-xl justify-center">{{ message }}</p>
             <audio id="stream"></audio>
+            <audio id="mp3Stream" controls src="/stream.mp3"></audio>
             <button class="btn" onclick="toggle()" id="mediaButton">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-6 h-6" id="playIcon">
@@ -73,13 +74,7 @@
     let mediaButton = document.getElementById('mediaButton');
     let streamSrc = '/output.m3u8';
     let hls; 
-    if (Hls.isSupported()) {
-        hls = hls || new Hls();
-        hls.loadSource(streamSrc);
-        hls.attachMedia(stream);
-    } else if (stream.canPlayType('application/vnd.apple.mpegurl')) {
-        stream.src = streamSrc;
-    }
+
 
     function toggle() {
         stream.paused ? stream.play() : stream.pause();
