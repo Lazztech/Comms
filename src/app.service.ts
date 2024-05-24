@@ -22,20 +22,6 @@ export class AppService {
     return 'Hello World!';
   }
 
-  logStreamEvents(streamName: string, stream: any) {
-    stream.on('data', (chunk) => console.log(`${streamName}: on data`, chunk.length));
-    stream.on('close', () => console.log(`${streamName}: close`));
-    stream.on('end', () => console.log(`${streamName}: end`));
-    stream.on('drain', () => console.log(`${streamName}: drain`));
-    stream.on('error', (err) => console.error(`${streamName}: err`, err));
-    stream.on('finish', () => console.log(`${streamName}: finish`));
-    stream.on('pause', () => console.log(`${streamName}: pause`));
-    stream.on('pipe', () => console.log(`${streamName}: pipe`));
-    // stream.on('readable', () => console.log('stream readable')); 
-    stream.on('resume', () => console.log(`${streamName}: resume`));
-    stream.on('unpipe', () => console.log(`${streamName}: unpipe`));
-  }
-
   start() {
     console.log(ffmpegPath)
     this.ffmpegMicOutput = this.startFfmpegMicProcess();
@@ -50,7 +36,7 @@ export class AppService {
   }
 
   broadcast(buffer: Buffer) {
-    this.stream.push(buffer);
+    Readable.from(buffer).pipe(this.stream);
   }
 
   startMp3Output() {
@@ -78,8 +64,6 @@ export class AppService {
   }
 
   startFfmpegMicProcess() {
-    // ffmpeg -use_wallclock_as_timestamps true -f wav -re -i pipe: -codec:a aac -b:a 128k -af aresample=async=1 -f wav -
-    // ffmpeg -use_wallclock_as_timestamps true -f avfoundation -i :1 -f wav -re -i pipe: -codec:a aac -b:a 128k -af aresample=async=1 -filter_complex amerge=inputs=2 -f wav -
     this.ffmpegMicProcess = spawn(ffmpegPath, [
       '-hide_banner',
       '-f', 'avfoundation', // mac os media devices
@@ -87,9 +71,20 @@ export class AppService {
       '-f', 'wav',
       '-'
     ]);
-    this.ffmpegMicProcess.stderr.on('data', (err) => {
-      console.error(err.toString());
-    });
     return this.ffmpegMicProcess.stdout;
+  }
+
+  logStreamEvents(streamName: string, stream: any) {
+    stream.on('data', (chunk) => console.log(`${streamName}: on data`, chunk.length));
+    stream.on('close', () => console.log(`${streamName}: close`));
+    stream.on('end', () => console.log(`${streamName}: end`));
+    stream.on('drain', () => console.log(`${streamName}: drain`));
+    stream.on('error', (err) => console.error(`${streamName}: err`, err));
+    stream.on('finish', () => console.log(`${streamName}: finish`));
+    stream.on('pause', () => console.log(`${streamName}: pause`));
+    stream.on('pipe', () => console.log(`${streamName}: pipe`));
+    // stream.on('readable', () => console.log('stream readable')); 
+    stream.on('resume', () => console.log(`${streamName}: resume`));
+    stream.on('unpipe', () => console.log(`${streamName}: unpipe`));
   }
 }
