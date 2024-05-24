@@ -28,7 +28,7 @@
                     d="M9.348 14.652a3.75 3.75 0 0 1 0-5.304m5.304 0a3.75 3.75 0 0 1 0 5.304m-7.425 2.121a6.75 6.75 0 0 1 0-9.546m9.546 0a6.75 6.75 0 0 1 0 9.546M5.106 18.894c-3.808-3.807-3.808-9.98 0-13.788m13.788 0c3.808 3.807 3.808 9.98 0 13.788M12 12h.008v.008H12V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
             </svg>
             <p id="status" class="text-xl justify-center">{{ message }}</p>
-            <audio id="stream" src="/stream.mp3" preload="none" ></audio>
+            <audio id="stream" src="/stream.mp3" preload="none"></audio>
             <button class="btn" onclick="toggle()" id="mediaButton">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-6 h-6" id="playIcon">
@@ -39,7 +39,8 @@
         </div>
 
         <div class="flex flex-col gap-4 flex-grow items-center justify-center">
-            <button class="btn btn-circle btn-outline size-64 border-orange-500 active:bg-red-500" id="recordButton" onclick="startRecording()">
+            <button class="btn btn-circle btn-outline size-64 border-orange-500 active:bg-red-500" id="recordButton"
+                onclick="startRecording()">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
                     stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -50,6 +51,41 @@
         </div>
     </div>
 </body>
+<script src="https://cdn.socket.io/4.7.5/socket.io.min.js" integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO" crossorigin="anonymous"></script>
+<script>
+    const socket = io('/webrtc');
+    const audio = document.getElementById('stream');
+    let localStream;
+    let peerConnection;
+
+    const configuration = {};
+
+    socket.on('offer', async (message) => {
+        peerConnection = new RTCPeerConnection(configuration);
+        peerConnection.ontrack = (event) => {
+            audio.srcObject = event.streams[0];
+        };
+
+        await peerConnection.setRemoteDescription(new RTCSessionDescription(message));
+        const answer = await peerConnection.createAnswer();
+        await peerConnection.setLocalDescription(answer);
+        socket.emit('answer', answer);
+    });
+
+    // Initiate audio stream
+    async function startBroadcast() {
+        localStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        peerConnection = new RTCPeerConnection(configuration);
+        localStream.getTracks().forEach(track => peerConnection.addTrack(track, localStream));
+
+        const offer = await peerConnection.createOffer();
+        await peerConnection.setLocalDescription(offer);
+        socket.emit('offer', offer);
+    }
+
+    // Uncomment to start broadcast automatically
+    startBroadcast();
+</script>
 <script>
     const playSvg = `                
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -145,4 +181,5 @@
 </script>
 <script src="//cdn.jsdelivr.net/npm/eruda"></script>
 <script>eruda.init();</script>
+
 </html>

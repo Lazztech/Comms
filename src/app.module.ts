@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { MulterModule } from '@nestjs/platform-express';
+import { AppGateway } from './app/app.gateway';
 
 @Module({
   imports: [
@@ -12,6 +13,6 @@ import { MulterModule } from '@nestjs/platform-express';
     })
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, AppGateway],
 })
 export class AppModule {}
