@@ -22,27 +22,31 @@ export class AppService {
     return 'Hello World!';
   }
 
+  logStreamEvents(streamName: string, stream: any) {
+    stream.on('data', (chunk) => console.log(`${streamName}: on data`, chunk.length));
+    stream.on('close', () => console.log(`${streamName}: close`));
+    stream.on('end', () => console.log(`${streamName}: end`));
+    stream.on('drain', () => console.log(`${streamName}: drain`));
+    stream.on('error', (err) => console.error(`${streamName}: err`, err));
+    stream.on('finish', () => console.log(`${streamName}: finish`));
+    stream.on('pause', () => console.log(`${streamName}: pause`));
+    stream.on('pipe', () => console.log(`${streamName}: pipe`));
+    // stream.on('readable', () => console.log('stream readable')); 
+    stream.on('resume', () => console.log(`${streamName}: resume`));
+    stream.on('unpipe', () => console.log(`${streamName}: unpipe`));
+  }
+
   start() {
     console.log(ffmpegPath)
     this.ffmpegMicOutput = this.startFfmpegMicProcess();
     this.ffmpegMicOutput.pipe(this.stream);
-    this.stream.on('data', (chunk) => console.log('stream on data', chunk.length));
-    this.stream.on('close', () => console.log('stream close'));
-    this.stream.on('end', () => console.log('stream end'));
-    this.stream.on('drain', () => console.log('stream drain'));
-    this.stream.on('error', (err) => console.error('stream err', err));
-    this.stream.on('finish', () => console.log('stream finish'));
-    this.stream.on('pause', () => { 
-      console.log('stream pause');
-      // this.stream.resume();
-    });
-    this.stream.on('pipe', () => console.log('stream pipe'));
-    // this.stream.on('readable', () => console.log('stream readable')); 
-    this.stream.on('resume', () => console.log('stream resume'));
-    this.stream.on('unpipe', () => console.log('stream unpipe'));
 
     // this.startHlsOutput();
     this.mp3ReadableSteam = this.startMp3Output();
+
+    this.logStreamEvents('stream: ', this.stream);
+    this.logStreamEvents('ffmpegMicOutput: ', this.ffmpegMicOutput);
+    this.logStreamEvents('mp3ReadableSteam', this.mp3ReadableSteam);
   }
 
   broadcast(buffer: Buffer) {
