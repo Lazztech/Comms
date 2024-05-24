@@ -25,15 +25,16 @@ export class AppService {
 
   start() {
     console.log(ffmpegPath)
-    this.ffmpegMicOutput = this.startFfmpegMicProcess();
+    // this.ffmpegMicOutput = this.startFfmpegMicProcess();
     // this.ffmpegMicOutput.pipe(this.stream);
+
     this.startMicStream().pipe(this.stream);
 
     // this.startHlsOutput();
     this.mp3ReadableSteam = this.startMp3Output();
 
     this.logStreamEvents('stream: ', this.stream);
-    this.logStreamEvents('ffmpegMicOutput: ', this.ffmpegMicOutput);
+    // this.logStreamEvents('ffmpegMicOutput: ', this.ffmpegMicOutput);
     this.logStreamEvents('mp3ReadableSteam', this.mp3ReadableSteam);
   }
 
