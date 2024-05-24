@@ -4,6 +4,7 @@ import { Injectable } from '@nestjs/common';
 import { ChildProcessWithoutNullStreams, spawn } from 'child_process';
 import { Readable } from 'stream';
 import MemoryStream = require("memorystream");
+import * as mic from 'mic';
 
 @Injectable()
 export class AppService {
@@ -25,7 +26,8 @@ export class AppService {
   start() {
     console.log(ffmpegPath)
     this.ffmpegMicOutput = this.startFfmpegMicProcess();
-    this.ffmpegMicOutput.pipe(this.stream);
+    // this.ffmpegMicOutput.pipe(this.stream);
+    this.startMicStream().pipe(this.stream);
 
     // this.startHlsOutput();
     this.mp3ReadableSteam = this.startMp3Output();
@@ -73,6 +75,31 @@ export class AppService {
     ]);
     return this.ffmpegMicProcess.stdout;
   }
+
+  startMicStream(): Readable {
+    const micInstance = mic({
+      rate: '9600',
+      channels: '1',
+      debug: true,
+      fileType: 'wav'
+      // exitOnSilence: 6
+    });
+    const micInputStream = micInstance.getAudioStream();
+    console.log(micInputStream);
+
+    micInputStream.on('data', (data) => console.log("Recieved Input Stream: " + data.length));
+    micInputStream.on('error', (err) => console.log("Error in Input Stream: " + err));
+    micInputStream.on('startComplete', () => console.log("Got SIGNAL startComplete"));
+    micInputStream.on('stopComplete', () => console.log("Got SIGNAL stopComplete"));
+    micInputStream.on('pauseComplete', () => console.log("Got SIGNAL pauseComplete"));
+    micInputStream.on('resumeComplete', () => console.log("Got SIGNAL resumeComplete"));
+    micInputStream.on('silence', () => console.log("Got SIGNAL silence"));
+    micInputStream.on('processExitComplete', () => console.log("Got SIGNAL processExitComplete"));
+
+    micInstance.start();
+    return micInputStream;
+  }
+
 
   logStreamEvents(streamName: string, stream: any) {
     stream.on('data', (chunk) => console.log(`${streamName}: on data`, chunk.length));
