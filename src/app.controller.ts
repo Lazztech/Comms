@@ -29,13 +29,11 @@ export class AppController {
       res.write(chunk);
       res.flushHeaders();
     });
-    // setTimeout(() => res.end(), 3000)
   }
 
   @Post('broadcast')
   @UseInterceptors(FileInterceptor('audio_data'))
   uploadFile(@UploadedFile() file: Express.Multer.File) {
-    // Readable.from(file.buffer).pipe(createWriteStream('test.wav'))
     this.appService.broadcast(file.buffer);
   }
 }
