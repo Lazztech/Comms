@@ -5,11 +5,14 @@ import { ChildProcessWithoutNullStreams, spawn } from 'child_process';
 import { Readable } from 'stream';
 import MemoryStream = require("memorystream");
 import * as mic from 'mic';
+import * as Speaker from 'speaker';
 
 @Injectable()
 export class AppService {
   ffmpegMicProcess: ChildProcessWithoutNullStreams;
   ffmpegMicOutput: Readable;
+
+  speaker: Speaker;
 
   stream: MemoryStream = new MemoryStream();
 
@@ -30,6 +33,11 @@ export class AppService {
 
     this.startMicStream().pipe(this.stream);
 
+    // Create the Speaker instance
+    this.speaker = new Speaker({
+      channels: 1
+    });
+
     // this.startHlsOutput();
     this.mp3ReadableSteam = this.startMp3Output();
 
@@ -40,6 +48,7 @@ export class AppService {
 
   broadcast(buffer: Buffer) {
     Readable.from(buffer).pipe(this.stream);
+    Readable.from(buffer).pipe(this.speaker);
   }
 
   startMp3Output() {
