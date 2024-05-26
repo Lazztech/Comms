@@ -19,11 +19,7 @@
 | 1 | Server | must be able to serve a stream of live inbound and outbound audio |
 | 2 | Server | must be accessible via the hardware wifi access point's local area network |
 | 3 | Server | must not require any access to the internet |
-| 4 | Server | must persist data between power cycles |
-| 5 | Server | must support web push notifications without the need of any external services |
-| 6 | Server | must be able to push updates to the client |
-| 7 | Server | must be deployable via a docker container |
-| 8 | Server | must not dominate airwaves to allow for other nodes to broadcast |
+| 4 | Server | must not dominate airwaves to allow for other nodes to broadcast |
 
 ## Client Requirements
 
@@ -36,6 +32,6 @@
 | 5 | Client | must be resiliant to momentary connectivity losses with the server |
 | 6 | Client | must be able to gracefully handle wifi roaming between servers |
 | 7 | Client | must maintain interactivity when offline |
-| 8 | Client | must be able to play live audio stream of incoming audio messages |
+| 8 | Client | must be able to play live audio stream of incoming audio stream |
 | 9 | Client | must be able to record audio messages and send them to the server for broadcast |
 | 10 | Client | must show loading indicator until sent voice message is finished being broadcasted |
